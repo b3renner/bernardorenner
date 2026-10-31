@@ -1,0 +1,3083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bernardo Renner — Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --ink: #111110;
+      --charcoal: #1b1917;
+      --ivory: #f3efe7;
+      --gray: #b7b2aa;
+      --accent: #c69b68;
+
+      --serif: Fraunces, Georgia, serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+--hero-image-max-width: 500px;
+--hero-image-ratio: 6 / 7;
+--hero-image-ratio-mobile: 5 / 4;
+--hero-image-border-radius: 20px;
+
+--facet-image-border-radius: 7px;
+
+      --cloud-columns: 12;
+      --cloud-row-height: 44px;
+      --cloud-gap: 14px;
+
+      --cloud-mobile-columns: 2;
+      --cloud-mobile-row-height: 34px;
+      --cloud-mobile-gap: 12px;
+      --cloud-mobile-small-rows: 6;
+      --cloud-mobile-lead-rows: 8;
+
+      --tile-hada-ratio: 4 / 3;
+      --tile-atrian-ratio: 1 / 1;
+      --tile-inova-ratio: 3 / 2;
+      --tile-gssa-ratio: 4 / 5;
+
+      --demo-preview-ratio: 16 / 10;
+
+      --bg: var(--ink);
+      --fg: var(--ivory);
+
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+.hero .lead-p {
+  max-width: 42ch;
+}
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+      margin: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(64px + env(safe-area-inset-top, 0px));
+    }
+
+    body {
+      font: 16px/1.65 Inter, system-ui, sans-serif;
+      background: var(--ink);
+      color: var(--ivory);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    section {
+      background: var(--bg);
+      color: var(--fg);
+      padding: clamp(72px, 10vw, 130px) clamp(20px, 5vw, 72px);
+    }
+
+    .w {
+      max-width: 1240px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 300;
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6.2vw, 84px);
+    }
+
+    h2 {
+      font-size: clamp(34px, 4.6vw, 64px);
+      margin: .2em 0 .4em;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .eyebrow,
+    .meta,
+    figcaption,
+    .tag {
+      font: 11.5px/1.5 var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .destaque {
+  font-weight: bold;
+}
+
+    .eyebrow {
+      color: var(--accent);
+    }
+
+    .meta {
+      opacity: .65;
+      margin: 14px 0 40px;
+    }
+
+    p {
+      max-width: 60ch;
+      margin: 0 0 1em;
+      opacity: .88;
+    }
+
+    .lead-p {
+      font-size: 19px;
+    }
+
+    .btn {
+      display: inline-block;
+      font: 12px var(--mono);
+      letter-spacing: .14em;
+      padding: 14px 22px;
+      border: 1px solid currentColor;
+      text-decoration: none;
+      margin: 12px 12px 0 0;
+    }
+
+    .btn.fill {
+      background: var(--ivory);
+      color: var(--ink);
+      border-color: var(--ivory);
+    }
+
+    .fade {
+      height: 140px;
+      background: linear-gradient(var(--a), var(--b));
+    }
+
+
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: calc(18px + env(safe-area-inset-top, 0px)) clamp(20px, 5vw, 72px) 18px;
+      background: linear-gradient(rgba(17,17,16,.85), transparent);
+      font: 12px var(--mono);
+      letter-spacing: .14em;
+      color: var(--ivory);
+    }
+
+    header nav {
+      display: flex;
+      gap: clamp(12px, 2.4vw, 32px);
+    }
+
+    header a {
+      text-decoration: none;
+    }
+
+
+
+    #home {
+      --bg:
+        radial-gradient(
+          ellipse 55% 60% at 74% 46%,
+          #2a2119 0%,
+          #171412 50%,
+          transparent 80%
+        ),
+        linear-gradient(#111110, #1b1917);
+
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 24px;
+      align-items: center;
+      min-height: 100vh;
+      max-width: 1320px;
+      margin: auto;
+      padding: 130px clamp(20px, 5vw, 72px) 36px;
+    }
+
+    .hero .text {
+      grid-column: 1 / span 6;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 4.9vw, 68px);
+      max-width: 11em;
+    }
+
+    .portrait {
+      grid-column: 7 / span 6;
+      justify-self: end;
+      width: min(100%, var(--hero-image-max-width));
+      position: relative;
+    }
+
+    .portrait::before {
+      content: '';
+      position: absolute;
+      inset: -18% -14%;
+      background: radial-gradient(
+        closest-side,
+        rgba(112,118,91,.24),
+        rgba(66,53,45,.18) 55%,
+        transparent
+      );
+      z-index: -1;
+    }
+
+.portrait-frame {
+  position: relative;
+  aspect-ratio: var(--hero-image-ratio);
+  overflow: hidden;
+
+  border-radius: var(--hero-image-border-radius, 20px);
+
+  -webkit-mask-image: radial-gradient(
+    ellipse 74% 80% at 50% 52%,
+    #000 56%,
+    transparent 100%
+  );
+
+  mask-image: radial-gradient(
+    ellipse 74% 80% at 50% 52%,
+    #000 56%,
+    transparent 100%
+  );
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  display: block;
+}
+
+    .portrait-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: .1;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .caption-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 6px 8% 0;
+      padding-top: 10px;
+      border-top: 1px solid rgba(243,239,231,.22);
+      font: 11px var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      opacity: .6;
+    }
+
+    .vertical-label {
+      position: absolute;
+      left: -34px;
+      top: 50%;
+      translate: 0 -50%;
+      rotate: 180deg;
+      writing-mode: vertical-rl;
+      font: 11px var(--mono);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      opacity: .5;
+      white-space: nowrap;
+    }
+
+    .project-index {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .project-index a {
+      text-decoration: none;
+      border-top: 1px solid rgba(243,239,231,.22);
+      padding-top: 12px;
+      font: 12px var(--mono);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: color .3s, border-color .3s;
+    }
+
+    .project-index a:hover,
+    .project-index a:focus-visible {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .project-index span {
+      opacity: .5;
+      margin-right: 12px;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .portrait-frame {
+        animation: rise 1.8s ease both;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: scale(1.03);
+        }
+      }
+    }
+
+.facets-section{max-width:1320px;margin:auto;padding:72px clamp(20px,5vw,72px) 110px}
+.facets-section h2{font-style:italic;font-weight:300;font-size:clamp(40px,5.6vw,80px);margin:0}
+.facets-sub{font-size:clamp(17px,1.8vw,22px);color:#d7b766;opacity:1;margin:10px 0 0}
+.facets{--facets-h:clamp(300px,46vw,620px);display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.6vw,22px);margin-top:56px}
+.facet{flex:1;min-width:0;height:calc(var(--facets-h) * var(--s,1));position:relative;overflow:hidden;border-radius: var(--facet-image-border-radius, 4px);background:#2a2622}
+.facet img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,center);display:block;transition:transform .6s}
+.facet:hover img{transform:scale(1.05)}
+.facet.empty{background:linear-gradient(#85846f,#4f4f4c)}
+.facet.empty img{display:none}
+.facet.empty::before{content:'img';position:absolute;inset:0;display:grid;place-items:center;font:24px Inter,sans-serif}
+.facet::after{content:'';position:absolute;inset:0;background:#c98a4b;mix-blend-mode:multiply;opacity:var(--warm,0);pointer-events:none}
+.facet img{filter:brightness(var(--bright,1)) saturate(var(--sat,1))}
+
+
+.slant {
+  height: clamp(110px, 15vw, 230px);
+  background: #1b1917;
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+
+  --line-gap: 23px;
+  --line-thickness: 15px;
+  --line-color: #ffffff;
+}
+
+.slant::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  top: calc(-1 * (var(--line-gap) + var(--line-thickness)));
+  height: calc(
+    100% + var(--line-gap) + var(--line-thickness)
+  );
+
+  background: var(--line-color);
+
+  clip-path: polygon(
+    0 calc(100% - var(--line-gap) - var(--line-thickness)),
+    100% 0,
+    100% var(--line-thickness),
+    0 calc(100% - var(--line-gap))
+  );
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+.slant::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--hada-bg);
+
+  clip-path: polygon(
+    0 100%,
+    100% 0,
+    100% 100%
+  );
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+    .work {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      align-items: start;
+      margin-top: 40px;
+    }
+
+    .tile {
+      display: block;
+      text-decoration: none;
+      position: relative;
+      min-width: 0;
+    }
+
+    .tile .image-box {
+      background: #2a2622;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .tile--hada .image-box {
+      aspect-ratio: var(--tile-hada-ratio);
+    }
+
+    .tile--atrian .image-box {
+      aspect-ratio: var(--tile-atrian-ratio);
+    }
+
+    .tile--inova .image-box {
+      aspect-ratio: var(--tile-inova-ratio);
+    }
+
+    .tile--gssa .image-box {
+      aspect-ratio: var(--tile-gssa-ratio);
+    }
+
+    .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s;
+    }
+
+    .tile:hover img,
+    .tile:focus-visible img {
+      transform: scale(1.04);
+    }
+
+    .tile h3 {
+      margin: 14px 0 4px;
+    }
+
+    .tile p {
+      font-size: 14px;
+    }
+
+    .cloud {
+      display: grid;
+      grid-template-columns: repeat(
+        var(--cloud-columns),
+        minmax(0, 1fr)
+      );
+      grid-auto-rows: var(--cloud-row-height);
+      grid-auto-flow: dense;
+      gap: var(--cloud-gap);
+      margin: 48px 0;
+    }
+
+    .cloud figure {
+      grid-column: span var(--cols, 4);
+      grid-row: span var(--rows, 5);
+
+      min-width: 0;
+      min-height: 0;
+      position: relative;
+      overflow: hidden;
+
+      cursor: zoom-in;
+      background: rgba(128,128,128,.14);
+      outline-offset: 3px;
+    }
+
+    .cloud figure:nth-child(3n + 2) {
+      margin-top: 22px;
+    }
+
+    .cloud img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: var(--object-position, center);
+      display: block;
+      transition: transform .6s;
+    }
+
+    .cloud figure:hover img,
+    .cloud figure:focus-visible img {
+      transform: scale(1.05);
+    }
+
+    .cloud figcaption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 28px 12px 10px;
+      color: var(--ivory);
+      background: linear-gradient(transparent, rgba(0,0,0,.75));
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .cloud figure:hover figcaption,
+    .cloud figure:focus-visible figcaption,
+    .cloud figure.lead figcaption {
+      opacity: 1;
+    }
+
+    .cloud figure.video-poster::after {
+      content: '▶';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.6);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      pointer-events: none;
+    }
+
+    .cloud figure.empty {
+      border: 1px dashed currentColor;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .cloud figure.empty img {
+      display: none;
+    }
+
+    .cloud figure.empty::before {
+      content: '↳ ' attr(data-slot);
+      font: 11px var(--mono);
+      opacity: .55;
+      padding: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .cloud.rec {
+      --cloud-row-height: 60px;
+    }
+
+    .cloud.rec figure {
+      background: none;
+      cursor: zoom-in;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cloud.rec img {
+      object-fit: contain;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .cloud.rec figcaption {
+      position: static;
+      opacity: 1;
+      background: none;
+      color: inherit;
+      padding: 8px 0;
+    }
+
+
+    #hada .cloud {
+      --cloud-row-height: 46px;
+      --cloud-gap: 14px;
+    }
+
+    #atrian .cloud {
+      --cloud-row-height: 42px;
+      --cloud-gap: 14px;
+    }
+
+    #inova .cloud {
+      --cloud-row-height: 46px;
+      --cloud-gap: 14px;
+    }
+
+    #community .cloud {
+      --cloud-row-height: 42px;
+      --cloud-gap: 14px;
+    }
+
+    #recognition .cloud {
+      --cloud-row-height: 60px;
+      --cloud-gap: 16px;
+    }
+
+:root{--hada-bg:#e4e4e0;--hada-ink:#16181d;--hada-navy:#1c2644;
+    --paper-texture: url('paper.png');}
+
+html,
+body {
+  overflow-x: clip;
+}
+#hada {
+  --bg: var(--hada-bg);
+  --fg: var(--hada-ink);
+  --accent: #435644;
+
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+  z-index: 3;
+  
+
+  background-color: var(--hada-bg);
+  background-image: none;
+
+  padding-top: clamp(48px, 6vw, 90px);
+}
+
+#hada::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  opacity: 0.65;
+
+  mix-blend-mode: multiply;
+  filter: contrast(1.25);
+
+  background-image:
+    var(--paper-texture),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .4 0 0 0 0 .4 .35 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+
+
+  background-size:
+    100% auto,
+    220px 220px;
+
+  background-repeat:
+    repeat-y,
+    repeat;
+
+  background-position:
+    center top,
+    left top;
+}
+
+#hada .w {
+  position: relative;
+}
+.hada-watermark {
+  position: absolute;
+
+  left: 75%;
+  top: clamp(220px, 22vw, 360px);
+  right: auto;
+
+  width: min(120vw, 1600px);
+  height: auto;
+
+  opacity: .04;
+  filter: grayscale(1);
+
+  transform: translate(-50%, -50%) rotate(-53.5deg);
+  transform-origin: center center;
+
+  z-index: -1;
+  pointer-events: none;
+}
+#hada .w{position:relative}
+
+.hada-logo {
+  display: block;
+  height: clamp(170px, 25vw, 190px);
+  width: auto;
+
+  transform: translateY(45px);
+}
+.hada-wordmark{font:600 clamp(48px,7vw,84px)/1 var(--serif)}
+.hada-pill{position:relative;display:block;width:fit-content;max-width:350px;margin:22px 0 46px;padding:12px 24px 12px 46px;border:1.5px solid var(--hada-navy);border-radius:28px;font:italic 500 clamp(18px,1.8vw,22px)/1.25 var(--serif);opacity:1}
+.hada-star{position:absolute;left:-14px;top:-14px;width:42px;height:42px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font-size:24px;font-style:normal}
+.hada-doc{display:inline-block;margin-top:20px;font:italic 500 18px var(--serif);text-underline-offset:4px}
+
+.hq{position:relative;display:flex;align-items:center;gap:22px;max-width:680px;background:#fff;color:var(--hada-ink);border-radius:34px;padding:58px 34px 30px;box-shadow:0 18px 40px rgba(30,40,55,.08)}
+.hq--pill{border-radius:34px 150px 150px 34px;padding-right:50px}
+.hq-mark{position:absolute;left:30px;top:-24px;font:700 112px/1 Georgia,serif;color:#111}
+.hq-body{flex:1;min-width:0}
+.hq h3{font:italic 500 clamp(22px,2.2vw,28px)/1.1 var(--serif);margin:0 0 12px}
+.hq p{max-width:none;opacity:1;font-size:15px;line-height:1.5;margin:0 0 .8em}
+.hq p.hq-src{font:600 16px/1.35 var(--serif);margin:0}
+.hq-logo{flex:none;width:clamp(90px,10vw,130px);height:auto;object-fit:contain}
+
+#hada .cloud{--cloud-columns:12;--cloud-row-height:64px;--cloud-gap:14px;margin:clamp(56px,8vw,110px) 0}
+#hada .cloud figure{border-radius:24px;background:linear-gradient(160deg,#dce8ee,#a8c0d0);box-shadow:0 14px 28px rgba(40,60,80,.14);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+#hada .cloud figure:nth-child(3n+2){margin-top:0}
+#hada .cloud figure:hover,#hada .cloud figure:focus-visible{transform:translateY(-5px) scale(1.012);box-shadow:0 26px 44px rgba(40,60,80,.22);z-index:2}
+#hada .cloud figure.empty{border:0}
+#hada .cloud figure.empty::before{content:'img';font:300 24px Inter,sans-serif;color:#fff;opacity:.8}
+#hada .cloud figure.shape-br{border-radius:24px 24px 120px 24px}
+#hada .cloud figure.shape-tl{border-radius:120px 24px 24px 24px}
+#hada .cloud figure.shape-tr{border-radius:24px 120px 24px 24px}
+#hada .cloud figure.shape-bl{border-radius:24px 24px 24px 120px}
+#hada .cloud figure.is-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(14px,1.8vw,28px);cursor:default;background:#fff;color:var(--hada-ink)}
+#hada .cloud figure.is-text.v-green{background:#3f6b4f;color:#f3f6ef}
+#hada .cloud figure.is-text.v-ink{background:#14171c;color:#d7b766}
+.is-text .t-big{font:italic 500 clamp(30px,3.6vw,52px)/1 var(--serif);margin-bottom:8px}
+.is-text.t-sm .t-big{font-size:clamp(20px,2.2vw,30px);line-height:1.12;margin:0}
+.is-text .t-small{font:500 clamp(10px,.9vw,12px)/1.45 var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.is-text.t-sm .t-small{margin-top:6px}
+
+#hada .cloud figure.is-video{cursor:default;background:#14171c}
+#hada .cloud figure.is-video video{width:100%;height:100%;object-fit:cover;display:block}
+.v-sound{position:absolute;right:12px;bottom:12px;z-index:3;padding:8px 14px;border:0;border-radius:99px;background:rgba(15,15,15,.72);color:#fff;font:600 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(6px);transition:background .3s,transform .3s}
+.v-sound:hover,.v-sound:focus-visible{background:#d7b766;color:#111;transform:translateY(-2px)}
+#hada .cloud figure.is-logo{background:#fff}
+#hada .cloud figure.is-logo img{object-fit:contain;padding:2%}
+@media(min-width:821px){#hada .cloud figure{grid-column:var(--x) / span var(--cols);grid-row:var(--y) / span var(--rows)}}
+
+
+.hada-duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start;margin-top:clamp(48px,7vw,96px)}
+.hada-duo--b{align-items:center}
+.hada-duo .stack{display:grid;gap:44px}
+.hada-duo .hq{max-width:none}
+
+.vp{position:relative;background:#fff;border-radius:34px;padding:28px 26px 30px;box-shadow:0 18px 40px rgba(30,40,55,.08)}
+.vp h3{font:italic 500 clamp(24px,2.6vw,34px)/1 var(--serif);margin:4px 0 22px}
+.vp-icon{position:absolute;top:-68px;right:-14px;height:186px;width:auto}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.post{display:block;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#15171c;transition:transform .3s,box-shadow .3s}
+.post{position:relative}
+.post:hover,.post:focus-visible{transform:translateY(-4px);box-shadow:0 14px 26px rgba(0,0,0,.25)}
+.post:focus-visible{outline:2px solid var(--hada-navy);outline-offset:3px}
+.post::before{content:'↗';position:absolute;top:8px;right:8px;z-index:2;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.92);color:#111;display:grid;place-items:center;font-size:14px;font-weight:700;box-shadow:0 4px 10px rgba(0,0,0,.3);transition:transform .3s,background .3s}
+.post:hover::before,.post:focus-visible::before{transform:scale(1.12) rotate(8deg);background:#d7b766}
+.vp-hint{margin:-8px 0 18px;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.65}
+@media(hover:hover){
+  .post::after{content:'Open post ↗';position:absolute;inset:auto 0 0 0;padding:34px 8px 12px;text-align:center;font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.78));opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+  .post:hover::after,.post:focus-visible::after{opacity:1;transform:none}
+}
+.post img{width:100%;height:100%;object-fit:cover;display:block}
+
+.vcard{background:#fff;border-radius:34px;padding:16px 16px 20px;box-shadow:0 18px 40px rgba(30,40,55,.08)}
+.vthumb{position:relative;display:block;aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#20242b}
+.vthumb img,.vthumb video{width:100%;height:100%;object-fit:cover;display:block}
+
+.vcard p{max-width:none;opacity:.9;text-align:center;font-size:14px;margin:14px 8px 0}
+.vcard-link{text-align:center;margin-top:18px}
+.vcard-link a{display:inline-block;padding:11px 20px;border:1.5px solid var(--hada-navy);border-radius:99px;color:var(--hada-navy);text-decoration:none;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;transition:background .3s,color .3s,transform .3s}
+.vcard-link a:hover,.vcard-link a:focus-visible{background:var(--hada-navy);color:#fff;transform:translateY(-2px)}
+
+.hada-videos{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);margin-top:clamp(48px,7vw,96px)}
+
+.press{margin-top:clamp(64px,9vw,120px)}
+.press-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:14px;margin-bottom:40px;border-bottom:1.5px solid var(--hada-navy)}
+.press-head h3{font:italic 500 clamp(32px,4vw,52px)/1 var(--serif);margin:0}
+.press-head span{font:11px var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.press-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px 22px}
+.news{position:relative;display:flex;flex-direction:column;gap:10px;padding:12px 12px 16px;background:#fff;border-radius:22px;text-decoration:none;color:var(--hada-ink);box-shadow:0 14px 30px rgba(30,40,55,.09);transform:rotate(var(--tilt,0deg));transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+.news:nth-child(odd){--tilt:-.6deg}
+.news:nth-child(even){--tilt:.5deg}
+.news:hover,.news:focus-visible{transform:rotate(0deg) translateY(-6px);box-shadow:0 26px 44px rgba(30,40,55,.16)}
+.news::before{content:'';position:absolute;top:-10px;left:50%;width:76px;height:22px;translate:-50% 0;rotate:-3deg;background:rgba(215,183,102,.5);box-shadow:0 1px 2px rgba(0,0,0,.08);z-index:2}
+.news:nth-child(even)::before{rotate:2.5deg}
+.news-img{position:relative;display:block;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:linear-gradient(160deg,#dce8ee,#a8c0d0)}
+.news-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.news:hover .news-img img{transform:scale(1.05)}
+.news-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 4px 0;min-height:24px}
+.news-logo{height:22px;width:auto;max-width:58%;object-fit:contain}
+.news-meta time{margin-left:auto;font:11px var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.news-title{padding:0 4px;font:italic 500 18px/1.22 var(--serif)}
+.news-cta{margin-top:auto;padding:4px 4px 0;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.news:hover .news-cta{text-decoration:underline;text-underline-offset:4px}
+.news--feat{grid-column:1 / span 2;grid-row:1 / span 2;padding:16px 16px 24px;border-radius:30px 30px 110px 30px}
+.news--feat .news-img{flex:1;aspect-ratio:auto;min-height:260px;border-radius:20px}
+.news--feat .news-img::after{content:'Featured';position:absolute;top:14px;left:14px;padding:5px 12px;border-radius:99px;background:#111;color:#fff;font:600 10px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.news--feat .news-title{font-size:clamp(22px,2.5vw,32px);line-height:1.15}
+
+.voices{margin-top:clamp(64px,9vw,120px)}
+.voices-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:clamp(20px,3vw,40px)}
+.voice{position:relative;display:flex;flex-direction:column;background:#fff;color:var(--hada-ink);border-radius:34px;padding:16px 16px 26px;text-decoration:none;box-shadow:0 18px 40px rgba(30,40,55,.08);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+.voice:hover,.voice:focus-visible{transform:translateY(-6px);box-shadow:0 26px 44px rgba(30,40,55,.16)}
+.voice-photo{position:relative;aspect-ratio:4/3;border-radius:22px;overflow:hidden;background:linear-gradient(160deg,#dce8ee,#a8c0d0)}
+.voice-photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;transition:transform .6s}
+.voice:hover .voice-photo img{transform:scale(1.05)}
+.voice-photo--logo{background:#f6f6f3}
+.voice-photo--logo img{object-fit:contain;padding:14%}
+.voice-logo{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;height:40px;padding:0 14px;background:#fff;border-radius:99px;box-shadow:0 6px 16px rgba(0,0,0,.15)}
+.voice-logo img{height:22px;width:auto}
+.voice-logo:empty{display:none}
+.voice-body{display:flex;flex-direction:column;flex:1;padding:22px 12px 0}
+.voice-role{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.voice h3{font:italic 500 clamp(26px,2.6vw,34px)/1.05 var(--serif);margin:8px 0 4px}
+.voice-meta{font:11px var(--mono);letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.voice p{max-width:none;opacity:1;font-size:15px;line-height:1.5;margin:14px 0 0}
+.voice-cta{margin-top:auto;padding-top:20px;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.voice:hover .voice-cta{text-decoration:underline;text-underline-offset:4px}
+
+@media(max-width:820px){
+    #hada .cloud figure.m-tall{grid-column:span 2;grid-row:span 13}
+#hada .cloud figure.m-wide{grid-column:span 2; }
+  .hada-duo{grid-template-columns:1fr}
+  .hq--pill{border-radius:30px 80px 80px 30px}
+  .hq{padding:54px 24px 26px}
+  .hada-watermark{width:90vw;right:-25%}
+
+  .hada-videos{grid-template-columns:1fr}
+.press-grid{grid-template-columns:1fr 1fr}
+.news--feat{grid-column:1 / -1;grid-row:auto}
+.news--feat .news-img{flex:none;aspect-ratio:16/10}
+}
+
+
+
+   .atrian-region {
+  position: relative;
+  isolation: isolate;
+  z-index: 4;
+  padding-bottom: clamp(60px, 8vw, 120px); 
+  background:
+    linear-gradient(to bottom, transparent calc(100% - 340px), #141313 100%),
+    radial-gradient(ellipse 50% 38% at 88% 10%, rgba(18,176,180,.30), transparent 70%),
+    radial-gradient(ellipse 45% 30% at 6% 42%, rgba(164,69,224,.22), transparent 70%),
+    radial-gradient(ellipse 50% 34% at 82% 78%, rgba(18,176,180,.16), transparent 70%),
+    radial-gradient(ellipse 45% 26% at 10% 96%, rgba(164,69,224,.16), transparent 70%),
+    #0c1d20;
+}
+
+   .slant-atr {
+  --t: 14px;
+  height: clamp(110px, 15vw, 230px);
+  position: relative;
+  z-index: 4;
+  margin-top: -1px;
+  background: transparent;
+}
+.slant-atr::before,
+.slant-atr::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: calc(-1 * (var(--o) + var(--t)));
+  height: calc(100% + var(--o) + var(--t));
+  clip-path: polygon(
+  0 calc(100% - var(--o) - var(--t)),
+  100% 0,
+  100% var(--t),
+  0 calc(100% - var(--o))
+);
+  pointer-events: none;
+}
+
+.slant-atr .hada-wedge {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  background: var(--hada-bg);
+  pointer-events: none;
+}
+
+.slant-atr::before { 
+    --o: 22px; background: #12b0b4;  z-index: 2;}
+.slant-atr::after  { --o: 48px; background: #a445e0;  z-index: 3; }
+.slant-atr .spark {
+  position: absolute;
+  left: 12%;
+  top: calc(12% - 75px);
+  width: 40px; height: 40px;
+  background: #adf8ff;
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  z-index: 3;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .slant-atr .spark { animation: twinkle 3.6s ease-in-out infinite; }
+  @keyframes twinkle {
+    50% { transform: scale(1.35) rotate(45deg); opacity: .75; }
+  }
+}
+
+#atrian {
+  --bg: #0c1d20;
+  --fg: #e9f3f2;
+  --accent: #6fe3e7;
+  --atr-teal: #12b0b4;
+  --atr-purple: #a445e0;
+  --atr-aqua: #adf8ff;
+--atrian-mark-size: min(66vw, 850px);
+--atrian-mark-x: 76%;
+--atrian-mark-y: clamp(260px, 26vw, 410px);
+--atrian-mark-rotation: 14deg;
+--atrian-mark-opacity: .05;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: transparent;
+}
+#atrian .w { position: relative; }
+
+
+
+
+.atrian-watermark {
+  position: absolute;
+  left: var(--atrian-mark-x);
+  top: var(--atrian-mark-y);
+  width: var(--atrian-mark-size);
+  height: auto;
+  opacity: var(--atrian-mark-opacity);
+  transform: translate(-50%, -50%) rotate(var(--atrian-mark-rotation));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.atrian-heading {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.7vw, 22px);
+  width: fit-content;
+}
+
+.atrian-logo {
+  display: block;
+  height: clamp(70px, 13vw, 140px);
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.atrian-wordmark {
+  font: 700 clamp(56px, 9vw, 120px)/1 'Josefin Sans', sans-serif;
+  margin: 0;
+  color:#f6f6f3;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: #f6f6f3;
+}
+.atrian-pill {
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: 350px;
+  margin: 22px 0 36px;
+  padding: 12px 24px 12px 46px;
+  border: 1.5px solid var(--atr-purple);
+  border-radius: 28px;
+  font: italic 500 clamp(18px, 1.8vw, 22px)/1.25 var(--serif);
+  opacity: 1;
+}
+.atrian-star {
+  position: absolute;
+  left: -14px; top: -14px;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--atr-purple);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+#atrian .stats b {
+  background: linear-gradient(100deg, var(--atr-aqua), var(--atr-teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#atrian .hq {
+  background: rgba(255,255,255,.06);
+  color: var(--fg);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(8px);
+  box-shadow: none;
+  margin-top: clamp(40px, 6vw, 72px);
+}
+#atrian .hq-mark { color: var(--atr-purple); }
+
+#atrian .hq-logo-link {
+  flex: none;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 20px;
+  padding: 12px 16px;
+  transition: transform .3s;
+}
+#atrian .hq-logo-link:hover { transform: translateY(-3px); }
+#atrian .hq-link {
+  display: inline-block;
+  margin-top: 14px;
+  font: 500 11px var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--atr-aqua);
+  text-underline-offset: 4px;
+}
+
+.cases {
+  display: grid;
+  gap: clamp(72px, 10vw, 130px);
+  margin: clamp(48px, 7vw, 90px) 0 clamp(64px, 9vw, 120px);
+}
+.case {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+}
+.case:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
+.case:nth-child(even) .case-media { order: 2; }
+.case-media { position: relative; }
+.case-num {
+  position: absolute;
+  top: clamp(-70px, -5vw, -38px);
+  left: -6px;
+  z-index: 2;
+  font: italic 300 clamp(64px, 8vw, 110px)/1 var(--serif);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(173,248,255,.55);
+  pointer-events: none;
+}
+.case:nth-child(even) .case-num { left: auto; right: -6px; }
+
+.browser {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0a1416;
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 30px 60px rgba(0,0,0,.45), 0 0 0 8px rgba(255,255,255,.03);
+  transform: rotate(-.5deg);
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.case:nth-child(even) .browser { transform: rotate(.5deg); }
+.browser:hover { transform: none; }
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.browser-bar i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.25); }
+.browser-bar i:nth-child(1) { background: var(--atr-purple); }
+.browser-bar i:nth-child(2) { background: var(--atr-teal); }
+.browser-bar i:nth-child(3) { background: var(--atr-aqua); }
+.browser-url {
+  margin-left: 12px;
+  flex: 1;
+  max-width: 340px;
+  padding: 4px 14px;
+  border-radius: 99px;
+  background: rgba(0,0,0,.35);
+  font: 11px var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.browser-screen {
+  aspect-ratio: var(--demo-preview-ratio);
+  background: #0a1416;
+  display: grid;
+  place-items: center;
+}
+.browser-screen video { width: 100%; height: 100%; object-fit: contain; display: block; cursor: pointer; }
+.browser-screen.empty video { display: none; }
+.browser-screen.empty::before {
+  content: '↳ ' attr(data-file);
+  font: 11px var(--mono);
+  opacity: .55;
+  padding: 8px;
+  overflow-wrap: anywhere;
+}
+
+.case-body h3 {
+  font: italic 500 clamp(30px, 3.6vw, 48px)/1.05 var(--serif);
+  margin: 8px 0 6px;
+}
+.case-sub {
+  font: 11px/1.5 var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .65;
+  margin: 0;
+}
+.ba { display: grid; gap: 12px; margin: 24px 0; }
+.ba > div { padding: 16px 18px; border-radius: 18px; }
+.ba p { margin: 0; max-width: none; opacity: 1; font-size: 14px; line-height: 1.55; }
+.ba .tag { display: block; margin-bottom: 6px; }
+.ba-before { border: 1px dashed rgba(233,243,242,.35); }
+.ba-before p { opacity: .75; }
+.ba-before .tag { opacity: .6; }
+.ba-after {
+  background: linear-gradient(135deg, rgba(18,176,180,.22), rgba(164,69,224,.22));
+  border: 1px solid rgba(173,248,255,.3);
+}
+.ba-after .tag { color: var(--atr-aqua); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 18px; list-style: none; }
+.chips li {
+  padding: 6px 12px;
+  border: 1px solid rgba(173,248,255,.35);
+  border-radius: 99px;
+  font: 11px var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+#atrian .cloud { --cloud-columns: 12; --cloud-row-height: 64px; --cloud-gap: 14px; margin: clamp(48px, 7vw, 90px) 0; }
+#atrian .cloud figure {
+  border-radius: 24px;
+  background: linear-gradient(160deg, #12393c, #0e2326);
+  box-shadow: 0 14px 28px rgba(0,0,0,.35);
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s;
+}
+#atrian .cloud figure:nth-child(3n+2) { margin-top: 0; }
+#atrian .cloud figure:hover,
+#atrian .cloud figure:focus-visible {
+  transform: translateY(-5px) scale(1.012);
+  box-shadow: 0 26px 44px rgba(0,0,0,.5), 0 0 0 1px rgba(173,248,255,.25);
+  z-index: 2;
+}
+#atrian .cloud figure.shape-br { border-radius: 24px 24px 120px 24px; }
+#atrian .cloud figure.shape-tl { border-radius: 120px 24px 24px 24px; }
+#atrian .cloud figure.shape-tr { border-radius: 24px 120px 24px 24px; }
+#atrian .cloud figure.shape-bl { border-radius: 24px 24px 24px 120px; }
+#atrian .cloud figure.is-text {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(14px, 1.8vw, 28px);
+  cursor: default;
+}
+#atrian .cloud figure.is-text.v-purple { background: var(--atr-purple); color: #fff; }
+#atrian .cloud figure.is-text.v-teal   { background: var(--atr-teal);   color: #06292b; }
+#atrian .cloud figure.is-text.v-ink    { background: #071315; color: var(--atr-aqua); border: 1px solid rgba(173,248,255,.2); }
+
+#atrian .cloud figure.is-video { cursor: default; background: #071315; }
+#atrian .cloud figure.is-video video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: var(--object-position, center);
+  display: block;
+}
+#atrian .cloud figure.is-video.empty video { display: none; }
+@media (min-width: 821px) {
+  #atrian .cloud figure { grid-column: var(--x) / span var(--cols); grid-row: var(--y) / span var(--rows); }
+}
+
+#atrian .btn.fill { background: var(--atr-aqua); border-color: var(--atr-aqua); color: #062a2c; }
+#atrian .quote { border-left: 3px solid var(--atr-purple); padding-left: 24px; }
+
+@media (max-width: 820px) {
+  .case,
+  .case:nth-child(even) { grid-template-columns: 1fr; }
+  .case:nth-child(even) .case-media { order: 0; }
+  .case:nth-child(even) .case-num { left: -6px; right: auto; }
+  #atrian .cloud figure.m-wide { grid-column: span 2; }
+  .atrian-watermark { width: 120vw; left: 30%; }
+}
+
+#inova {
+  --bg: #141313;
+  --fg: #f1eee8;
+  --accent: #d7b766;
+  --inv-gold: #d7b766;
+  --inv-bronze: #c69b68;
+  --inv-green: #8fb58a;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 50% 26% at 90% 26%, rgba(198,155,104,.20), transparent 70%),
+    radial-gradient(ellipse 45% 22% at 4% 48%, rgba(63,107,79,.20), transparent 70%),
+    radial-gradient(ellipse 50% 24% at 90% 70%, rgba(215,183,102,.13), transparent 70%),
+    radial-gradient(ellipse 45% 20% at 6% 82%, rgba(63,107,79,.15), transparent 70%),
+    #141313;
+}
+#inova .w { position: relative; }
+
+.inv-emblem {
+  position: absolute;
+  right: 14px;                     
+  top: clamp(24px, 4.5vw, 70px);
+  width: clamp(240px, 30vw, 440px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1px rgba(215,183,102,.5),
+    0 0 0 14px rgba(215,183,102,.06),
+    0 0 0 15px rgba(215,183,102,.22),
+    0 0 130px rgba(215,183,102,.25);
+  z-index: -1;
+  pointer-events: none;
+}
+@media (max-width: 1100px) {
+  .inv-emblem { opacity: .4; }
+}
+@media (max-width: 820px) {
+  .inv-emblem { width: 150px; right: 6px; top: 8px; opacity: .25; }
+}
+
+.inv-heading { display: flex; align-items: center; gap: clamp(14px, 2vw, 28px); width: fit-content; margin-top: 10px; }
+.inv-logo {
+  height: clamp(90px, 13vw, 150px); aspect-ratio: 1; width: auto; flex: none;
+  object-fit: cover; border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(215,183,102,.35), 0 0 60px rgba(215,183,102,.18);
+}
+.inv-wordmark {
+  font: italic 300 clamp(48px, 8vw, 108px)/1 var(--serif); margin: 0;
+  background: linear-gradient(100deg, #f6ebc6, #d7b766 55%, #c69b68);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.inv-pill {
+  position: relative; display: block; width: fit-content; max-width: 440px;
+  margin: 24px 0 36px; padding: 12px 24px 12px 46px;
+  border: 1.5px solid var(--inv-gold); border-radius: 28px;
+  font: italic 500 clamp(18px, 1.8vw, 22px)/1.25 var(--serif); opacity: 1;
+}
+.inv-star {
+  position: absolute; left: -14px; top: -14px; width: 42px; height: 42px;
+  border-radius: 50%; background: #3f6b4f; color: #fff;
+  display: grid; place-items: center; font-size: 22px;
+}
+#inova .stats b {
+  background: linear-gradient(100deg, #f6ebc6, var(--inv-bronze));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.inv-chapter { display: flex; align-items: flex-end; gap: clamp(16px, 3vw, 40px); margin: clamp(72px, 10vw, 130px) 0 0; }
+.inv-num {
+  flex: none; font: italic 300 clamp(72px, 10vw, 140px)/.8 var(--serif);
+  color: transparent; -webkit-text-stroke: 1px rgba(215,183,102,.6);
+}
+.inv-chapter h3 { font: italic 500 clamp(30px, 3.6vw, 48px)/1.05 var(--serif); margin: 6px 0 10px; }
+.inv-chapter p:not(.eyebrow) { max-width: 52ch; margin: 0; }
+
+.inv-sponsors {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(18px, 2.4vw, 30px); margin: clamp(32px, 5vw, 56px) 0 0;
+}
+.sp {
+  display: flex; flex-direction: column; padding: 16px 16px 26px;
+  background: linear-gradient(160deg, rgba(215,183,102,.10), rgba(255,255,255,.03));
+  border: 1px solid rgba(215,183,102,.25); border-radius: 34px;
+  transition: transform .4s cubic-bezier(.2,.7,.2,1), border-color .4s;
+}
+.sp:nth-child(odd)  { border-radius: 34px 34px 34px 64px; }
+.sp:nth-child(even) { border-radius: 34px 64px 34px 34px; }
+.sp:hover { transform: translateY(-6px); border-color: rgba(215,183,102,.55); }
+.sp-logo { aspect-ratio: 16/9; border-radius: 22px; background: #f6f6f3; display: grid; place-items: center; overflow: hidden; }
+.sp-logo { position: relative; }
+.sp-logo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: var(--pos, center);
+  transition: transform .6s;
+}
+.sp:hover .sp-logo img { transform: scale(1.05); }
+.sp-fb { font: italic 500 28px var(--serif); color: #2a2926; }
+.sp-body { display: flex; flex-direction: column; flex: 1; padding: 22px 12px 0; }
+.sp-role { font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--inv-green); }
+.sp h3 { font: italic 500 clamp(26px, 2.6vw, 34px)/1.05 var(--serif); margin: 8px 0 0; }
+.sp p { max-width: none; opacity: .9; font-size: 14.5px; line-height: 1.55; margin: 12px 0 0; }
+
+#inova .cloud { --cloud-columns: 12; --cloud-row-height: 64px; --cloud-gap: 14px; margin: clamp(32px, 5vw, 56px) 0 0; }
+#inova .cloud figure {
+  border-radius: 24px; background: linear-gradient(160deg, #2a211a, #171210);
+  box-shadow: 0 14px 28px rgba(0,0,0,.4);
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s;
+}
+#inova .cloud figure:nth-child(3n+2) { margin-top: 0; }
+#inova .cloud figure:hover, #inova .cloud figure:focus-visible {
+  transform: translateY(-5px) scale(1.012);
+  box-shadow: 0 26px 44px rgba(0,0,0,.55), 0 0 0 1px rgba(215,183,102,.35); z-index: 2;
+}
+#inova .cloud figure.shape-br { border-radius: 24px 24px 120px 24px; }
+#inova .cloud figure.shape-tl { border-radius: 120px 24px 24px 24px; }
+#inova .cloud figure.shape-tr { border-radius: 24px 120px 24px 24px; }
+#inova .cloud figure.shape-bl { border-radius: 24px 24px 24px 120px; }
+#inova .cloud figure.is-video { cursor: default; background: #0d0b09; }
+#inova .cloud figure.is-video video { width: 100%; height: 100%; object-fit: cover; object-position: var(--object-position, center); display: block; }
+#inova .cloud figure.is-video.empty video { display: none; }
+#inova .cloud figure.logo-tile { background: #0d0d0c; }
+#inova .cloud figure.logo-tile img { object-fit: contain; padding: 6%; }
+#inova .cloud figure.tone-warm video { filter: sepia(.4) hue-rotate(-14deg) saturate(.9) brightness(.96); }
+#inova .cloud figure.tone-warm::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: #c98a4b; mix-blend-mode: multiply; opacity: .22; pointer-events: none;
+}
+@media (min-width: 821px) {
+  #inova .cloud figure { grid-column: var(--x) / span var(--cols); grid-row: var(--y) / span var(--rows); }
+}
+@media (max-width: 820px) { #inova .cloud figure.m-wide { grid-column: span 2; } }
+
+#community {
+  --bg: #f4f2ee; --fg: #2a3138; --accent: #2f6fa8;
+  --cm-blue: #2f6fa8; --cm-navy: #1c2b44; --cm-gold: #d7b766;
+  position: relative; overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(ellipse 50% 9% at 92% 12%, rgba(47,111,168,.10), transparent 70%),
+    radial-gradient(ellipse 45% 9% at 4% 46%, rgba(215,183,102,.14), transparent 70%),
+    radial-gradient(ellipse 50% 9% at 92% 80%, rgba(47,111,168,.08), transparent 70%),
+    #f4f2ee;
+}
+#community .w { position: relative; }
+
+.cm-chapter { display: flex; align-items: flex-end; gap: clamp(16px, 3vw, 40px); margin: clamp(72px, 10vw, 130px) 0 0; }
+.cm-num {
+  flex: none; font: italic 300 clamp(72px, 10vw, 140px)/.8 var(--serif);
+  color: transparent; -webkit-text-stroke: 1px rgba(47,111,168,.55);
+}
+.cm-chapter h3 { font: italic 500 clamp(30px, 3.6vw, 48px)/1.05 var(--serif); margin: 6px 0 10px; }
+.cm-chapter p:not(.eyebrow) { max-width: 56ch; margin: 0; }
+#community .stats b {
+  background: linear-gradient(100deg, #1c2b44, #2f6fa8);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+#community .card { border-top: 1px solid rgba(47,111,168,.45); }
+#community .hq { max-width: 680px; margin-top: clamp(40px, 6vw, 64px); }
+
+.cm-duo {
+  display: grid; grid-template-columns: minmax(0, 1fr) clamp(300px, 30vw, 400px);
+  gap: clamp(24px, 4vw, 56px); align-items: stretch; margin-top: clamp(40px, 6vw, 72px);
+}
+.aw-col { display: flex; flex-direction: column; gap: clamp(16px, 2vw, 24px); }
+.aw-tiles { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 1.6vw, 18px); }
+.aw-tile {
+  display: flex; flex-direction: column; justify-content: center; padding: 24px 26px;
+  background: #fff; color: var(--fg); border-radius: 28px;
+  box-shadow: 0 14px 28px rgba(40,60,80,.10);
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s;
+}
+.aw-tile:hover { transform: translateY(-5px); box-shadow: 0 26px 44px rgba(40,60,80,.18); }
+.aw-tile:nth-child(1) { border-radius: 28px 28px 28px 80px; }
+.aw-tile:nth-child(2) { border-radius: 28px 80px 28px 28px; }
+.aw-tile:nth-child(3) { border-radius: 28px 28px 80px 28px; }
+.aw-tile:nth-child(4) { border-radius: 80px 28px 28px 28px; }
+.aw-tile b { font: italic 500 clamp(34px, 4vw, 54px)/1.02 var(--serif); }
+.aw-tile:not([class*="t-"]) b {
+  background: linear-gradient(100deg, #1c2b44, #2f6fa8);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.aw-tile span { margin-top: 10px; font: 500 11px/1.5 var(--mono); letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+.aw-tile.t-blue { background: #2f6fa8; color: #fff; }
+.aw-tile.t-navy { background: #1c2b44; color: #e8d9a8; }
+.aw-tile.t-gold { background: #9673e7; color: #2a2113; }
+.aw-tile.t-gold b { font-size: clamp(26px, 2.8vw, 38px); }
+.cm-duo .hq { max-width: none; margin-top: 0; }
+.aw-facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; margin: 16px 0 0; font-size: 14px; }
+.aw-facts dt { font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--cm-blue); padding-top: 3px; }
+.aw-facts dd { margin: 0; }
+.aw-post {
+  position: relative; display: block; background: #fff; color: var(--fg); text-decoration: none;
+  border-radius: 34px 34px 34px 90px; padding: 16px 16px 20px;
+  box-shadow: 0 18px 40px rgba(30,40,55,.10); rotate: .8deg;
+  transition: rotate .4s, transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s;
+}
+.aw-post:hover { rotate: 0deg; transform: translateY(-6px); box-shadow: 0 26px 44px rgba(30,40,55,.18); }
+.aw-post::before {
+  content: ''; position: absolute; top: -10px; left: 50%; width: 76px; height: 22px;
+  translate: -50% 0; rotate: -3deg; background: rgba(215,183,102,.55); z-index: 2;
+}
+.aw-shot { aspect-ratio: 3/5; border-radius: 39px; overflow: hidden; background: linear-gradient(160deg, #dce8ee, #a8c0d0); }
+.aw-shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.aw-cap { display: block; margin-top: 14px; text-align: center; font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--cm-blue); }
+
+#community .cloud { --cloud-columns: 12; --cloud-row-height: 64px; --cloud-gap: 14px; margin: clamp(32px, 5vw, 56px) 0 0; }
+#community .cloud figure {
+  border-radius: 24px; background: linear-gradient(160deg, #dce8ee, #a8c0d0);
+  box-shadow: 0 14px 28px rgba(40,60,80,.14);
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s;
+}
+#community .cloud figure:nth-child(3n+2) { margin-top: 0; }
+#community .cloud figure:hover, #community .cloud figure:focus-visible {
+  transform: translateY(-5px) scale(1.012); box-shadow: 0 26px 44px rgba(40,60,80,.22); z-index: 2;
+}
+#community .cloud figure.empty { border: 0; }
+#community .cloud figure.empty::before { content: 'img'; font: 300 24px Inter, sans-serif; color: #fff; opacity: .8; }
+#community .cloud figure.shape-br { border-radius: 24px 24px 120px 24px; }
+#community .cloud figure.shape-tl { border-radius: 120px 24px 24px 24px; }
+#community .cloud figure.shape-tr { border-radius: 24px 120px 24px 24px; }
+#community .cloud figure.shape-bl { border-radius: 24px 24px 24px 120px; }
+#community .cloud figure.shape-bl figcaption { padding-left: 96px; }
+#community .cloud figure.shape-br figcaption { padding-right: 96px; }
+#community .cloud figure.is-text { display: flex; flex-direction: column; justify-content: center; padding: clamp(14px, 1.8vw, 28px); cursor: default; background: #fff; color: var(--fg); }
+#community .cloud figure.is-text.v-blue { background: #2f6fa8; color: #fff; }
+#community .cloud figure.is-text.v-navy { background: #1c2b44; color: #e8d9a8; }
+#community .cloud figure.is-text.v-gold { background: #d7b766; color: #2a2113; }
+#community .cloud figure.is-video { cursor: default; background: #14171c; }
+#community .cloud figure.is-video video { width: 100%; height: 100%; object-fit: cover; object-position: var(--object-position, center); display: block; }
+#community .cloud figure.is-video.empty video { display: none; }
+#community .cloud figure.is-embed { cursor: default; background: #000; }
+#community .cloud figure.is-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+@media (min-width: 821px) {
+  #community .cloud figure { grid-column: var(--x) / span var(--cols); grid-row: var(--y) / span var(--rows); }
+}
+@media (max-width: 820px) {
+  #community .cloud figure.m-wide { grid-column: span 2; }
+  .cm-duo { grid-template-columns: 1fr; }
+  .aw-post { max-width: 380px; margin: 0 auto; }
+.aw-tiles { grid-template-columns: 1fr 1fr; }
+}
+
+#recognition {
+  --bg: #12141a; --fg: #f1eee8; --accent: #d7b766;
+  --rc-gold: #d7b766; --rc-bronze: #c69b68; --rc-green: #8fb58a;
+  position: relative; overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(ellipse 50% 7% at 90% 10%, rgba(215,183,102,.16), transparent 70%),
+    radial-gradient(ellipse 45% 7% at 4% 40%, rgba(63,107,79,.16), transparent 70%),
+    radial-gradient(ellipse 50% 7% at 92% 72%, rgba(198,155,104,.14), transparent 70%),
+    linear-gradient(#12141a, #1b1917);
+}
+#recognition .w { position: relative; }
+#recognition .lead-p { max-width: 54ch; }
+
+.rc-photo {
+  position: relative; margin: 0; width: 100%; aspect-ratio: 4/5; align-self: start;
+  padding: 6px; background: #fff; border-radius: 14px; cursor: zoom-in;
+  box-shadow: 0 14px 28px rgba(0,0,0,.5); rotate: 3deg;
+  transition: rotate .4s, transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.rc-photo::before {
+  content: ''; position: absolute; top: -9px; left: 50%; width: 56px; height: 18px;
+  translate: -50% 0; rotate: -3deg; background: rgba(215,183,102,.6); z-index: 2;
+}
+.rc-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 9px; display: block; }
+.rc:nth-child(even) .rc-photo { rotate: -2.5deg; }
+.rc-photo:hover, .rc-photo:focus-visible { rotate: 0deg; transform: translateY(-4px) scale(1.05); }
+
+.ft-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(18px, 2.4vw, 30px); margin: clamp(32px, 5vw, 56px) 0 clamp(64px, 9vw, 110px); }
+.ft {
+  position: relative; display: flex; flex-direction: column; padding: 34px 30px 32px;
+  background: linear-gradient(160deg, rgba(215,183,102,.14), rgba(255,255,255,.03));
+  border: 1px solid rgba(215,183,102,.32); border-radius: 34px 34px 34px 80px;
+  transition: transform .4s cubic-bezier(.2,.7,.2,1), border-color .4s;
+}
+.ft:nth-child(2) { border-radius: 34px 80px 34px 34px; }
+.ft:hover { transform: translateY(-6px); border-color: rgba(215,183,102,.6); }
+.ft-num { font: italic 300 56px/1 var(--serif); color: transparent; -webkit-text-stroke: 1px rgba(215,183,102,.6); }
+.ft-kicker { display: block; margin-top: 14px; font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--rc-green); }
+.ft-title {
+  font: italic 500 clamp(26px, 2.7vw, 36px)/1.1 var(--serif); margin: 10px 0 14px;
+  background: linear-gradient(100deg, #f6ebc6, #d7b766 60%, #c69b68);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+}
+.ft p { max-width: none; margin: 0; font-size: 14.5px; line-height: 1.55; opacity: .9; }
+.ft .rc-photo { position: absolute; top: -26px; right: 22px; width: 104px; }
+.ft:has(.rc-photo) .ft-kicker { padding-right: 110px; }
+
+.rc-group { margin-top: clamp(56px, 8vw, 96px); }
+.rc-head { display: flex; align-items: baseline; gap: clamp(14px, 2.4vw, 28px); padding-bottom: 14px; border-bottom: 1.5px solid rgba(215,183,102,.45); }
+.rc-gnum { font: italic 300 clamp(40px, 5vw, 64px)/1 var(--serif); color: transparent; -webkit-text-stroke: 1px rgba(215,183,102,.6); }
+.rc-head h3 { font: italic 500 clamp(28px, 3.4vw, 44px)/1.05 var(--serif); margin: 0; }
+.rc-count { margin-left: auto; font: 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; opacity: .6; }
+
+.rc {
+  position: relative; display: grid; grid-template-columns: clamp(70px, 9vw, 110px) minmax(0, 1fr);
+  gap: 8px clamp(16px, 3vw, 40px); padding: 28px 0; border-top: 1px solid rgba(215,183,102,.2);
+}
+.rc-list .rc:first-child { border-top: 0; }
+.rc:has(.rc-photo) { grid-template-columns: clamp(70px, 9vw, 110px) minmax(0, 1fr) clamp(110px, 13vw, 160px); }
+.rc-year { font: 500 13px var(--mono); letter-spacing: .12em; color: var(--rc-gold); padding-top: 8px; }
+.rc-title { font: italic 500 clamp(22px, 2.4vw, 30px)/1.12 var(--serif); margin: 0; }
+.rc-issuer { margin: 8px 0 0; font: 11.5px/1.6 var(--mono); letter-spacing: .1em; text-transform: uppercase; opacity: .75; max-width: none; }
+.rc-lvl { display: inline-block; margin-left: 8px; padding: 2px 10px; border: 1px solid rgba(215,183,102,.45); border-radius: 99px; color: var(--rc-gold); font-size: 10px; }
+.rc-desc { margin: 12px 0 0; max-width: 58ch; font-size: 15px; line-height: 1.55; }
+.rc-link { display: inline-block; margin-top: 12px; font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--rc-gold); text-underline-offset: 4px; }
+.rc.feat {
+  margin: 12px 0; padding: 30px clamp(20px, 3vw, 36px); border: 1px solid rgba(215,183,102,.4);
+  border-radius: 28px 28px 28px 80px; background: linear-gradient(160deg, rgba(215,183,102,.12), rgba(255,255,255,.03));
+}
+.rc.feat .rc-title { font-size: clamp(28px, 3vw, 40px); }
+.rc-flag { display: inline-block; margin-bottom: 10px; padding: 4px 12px; border-radius: 99px; background: var(--rc-gold); color: #2a2113; font: 600 10px var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+.rc.feat:has(.rc-photo) {
+  grid-template-columns: clamp(70px, 9vw, 110px) minmax(0, 1fr) clamp(150px, 18vw, 240px);
+  align-items: center;
+}
+.rc.feat .rc-photo { rotate: 2deg; }
+.rc.feat .rc-photo:hover { rotate: 0deg; }
+
+.rc:has(.rc-photo.cut),
+.rc.feat:has(.rc-photo.cut) {
+  grid-template-columns: clamp(70px, 9vw, 110px) minmax(0, 1fr) clamp(120px, 13vw, 170px);
+  align-items: center;
+}
+.rc .rc-photo.cut {
+  aspect-ratio: 5/6; align-self: center;
+  background: none; box-shadow: none; padding: 0; border-radius: 0; rotate: 0deg;
+  display: grid; place-items: center; cursor: zoom-in;
+  translate: -178px 0; 
+}
+.rc .rc-photo.cut::before { 
+  inset: 4% -12% 0 -12%; top: auto; left: auto; width: auto; height: auto;
+  translate: none; rotate: none; border-radius: 50%; z-index: 0;
+  background: radial-gradient(closest-side, rgba(215,183,102,.34), rgba(215,183,102,.10) 58%, transparent 72%);
+  box-shadow: none;
+}
+.rc .rc-photo.cut::after { 
+  content: ''; position: absolute; inset: 12% -4% 4% -4%; z-index: 0;
+  border: 1px solid rgba(215,183,102,.28); border-radius: 50%; pointer-events: none;
+}
+.rc .rc-photo.cut img {
+  position: relative; z-index: 1; width: 100%; height: 100%;
+  object-fit: contain; border-radius: 0; transform-origin: 50% 6%;
+  filter: drop-shadow(0 18px 16px rgba(0,0,0,.55)) drop-shadow(0 0 22px rgba(215,183,102,.28));
+}
+.rc .rc-photo.cut:hover, .rc .rc-photo.cut:focus-visible { transform: none; rotate: 0deg; }
+.rc:has(.rc-photo.cert),
+.rc.feat:has(.rc-photo.cert) {
+  grid-template-columns: clamp(70px, 9vw, 110px) minmax(0, 1fr) clamp(200px, 25vw, 320px);
+  align-items: center;
+}
+.rc .rc-photo.cert {
+  width: auto; margin: 8px; aspect-ratio: 1.414 / 1; padding: 9px;
+  background: linear-gradient(145deg, #fbf7ea, #e9dfc3);
+  border-radius: 4px; rotate: -1.5deg; align-self: center;
+  box-shadow:
+    0 0 0 1px rgba(215,183,102,.8),
+    0 0 0 7px #1b1917,
+    0 0 0 8px rgba(215,183,102,.5),
+    0 20px 34px rgba(0,0,0,.6);
+}
+.rc .rc-photo.cert::before { display: none; }        
+.rc .rc-photo.cert::after {                        
+  content: ''; position: absolute; inset: 9px; border-radius: 2px; z-index: 2; pointer-events: none;
+  background: linear-gradient(115deg, transparent 38%, rgba(255,255,255,.2) 50%, transparent 62%);
+}
+.rc .rc-photo.cert img { object-fit: contain; border-radius: 1px; background: #fff; }
+
+
+.rc.feat:has(.rc-photo.cut) {
+  grid-template-columns: clamp(70px, 9vw, 110px) minmax(0, 1fr) clamp(140px, 15vw, 200px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .rc .rc-photo.cut:hover img, .rc .rc-photo.cut:focus-visible img { animation: rc-sway 1.8s ease-out; }
+  @keyframes rc-sway {
+    0% { rotate: 0deg; } 18% { rotate: 7deg; } 38% { rotate: -5deg; }
+    58% { rotate: 3deg; } 78% { rotate: -1.5deg; } 100% { rotate: 0deg; }
+  }
+}
+
+@media (max-width: 680px) {
+  .rc, .rc:has(.rc-photo) { grid-template-columns: 1fr; }
+  .rc .rc-photo { width: 130px; }
+  .ft .rc-photo { width: 86px; right: 14px; }
+  .rc .rc-photo.cut { translate: 0 0; }
+}
+
+    #about {
+      --bg: #1b1917;
+      --fg: #f3efe7;
+    }
+
+    footer {
+      background: #1b1917;
+      color: #f3efe7;
+      padding: 80px clamp(20px, 5vw, 72px) 40px;
+    }
+
+    footer #about {
+  padding-bottom: clamp(40px, 6vw, 72px);
+  margin-bottom: clamp(40px, 6vw, 72px);
+  border-bottom: 1px solid rgba(243,239,231,.18);
+}
+footer #about h2 { margin-bottom: 0; }
+footer .meta a { text-underline-offset: 4px; }
+footer .meta a:hover,
+footer .meta a:focus-visible { color: var(--accent); text-decoration: underline; }
+
+    .cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      margin: 32px 0;
+    }
+
+    .card {
+      border-top: 1px solid currentColor;
+      padding-top: 14px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin: 8px 0;
+    }
+
+    .card p {
+      font-size: 14px;
+    }
+
+    .facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin: 30px 0;
+      font-family: var(--serif);
+      font-size: 20px;
+    }
+
+    .facts small {
+      display: block;
+      font: 11px var(--mono);
+      opacity: .6;
+      text-transform: uppercase;
+    }
+
+    .mod {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      border: 1px solid rgba(216,210,198,.25);
+      padding: 24px;
+      margin: 20px 0;
+    }
+
+    .mod dl {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 6px 14px;
+      font-size: 14px;
+    }
+
+    .mod dt {
+      font: 11px var(--mono);
+      color: var(--accent);
+    }
+
+    .mod dd {
+      margin: 0;
+    }
+
+    .mod .shot {
+      aspect-ratio: var(--demo-preview-ratio);
+      background: rgba(128,128,128,.15);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .mod .shot img,
+    .mod .shot video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .mod .shot .placeholder {
+      padding: 24px;
+      opacity: .65;
+      font: 11px var(--mono);
+      text-align: center;
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 28px 0;
+    }
+
+    .stats b {
+      display: block;
+      font: 300 clamp(44px, 6vw, 80px)/1 var(--serif);
+      color: var(--accent);
+    }
+
+    .quote {
+      font: 300 clamp(22px, 3vw, 34px)/1.3 var(--serif);
+      max-width: 28em;
+      margin: 60px 0 0;
+    }
+
+
+
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(10,10,9,.94);
+      color: var(--ivory);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      overflow: auto;
+    }
+
+    #lightbox[hidden] {
+      display: none;
+    }
+
+    #lightbox .lightbox-content {
+      width: min(100%, 1200px);
+      display: grid;
+      justify-items: center;
+    }
+
+    #lightbox img {
+      max-width: min(92vw, 1100px);
+      max-height: 68vh;
+      object-fit: contain;
+    }
+
+    #lightbox .lightbox-copy {
+      max-width: 60ch;
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    #lightbox button {
+      position: fixed;
+      top: calc(16px + env(safe-area-inset-top, 0px));
+      right: 20px;
+      background: none;
+      border: 1px solid var(--ivory);
+      color: var(--ivory);
+      width: 44px;
+      height: 44px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 681px) {
+  #recognition .rc:has(.rc-photo),
+  #recognition .rc:has(.rc-photo.cert),
+  #recognition .rc:has(.rc-photo.cut) {
+    grid-template-columns: clamp(70px, 9vw, 110px) minmax(0, 1fr) clamp(200px, 25vw, 320px);
+    align-items: center;
+  }
+  #recognition .rc.feat:has(.rc-photo),
+  #recognition .rc.feat:has(.rc-photo.cut) {
+    grid-template-columns: clamp(70px, 9vw, 110px) minmax(0, 1fr) clamp(170px, 20vw, 260px);
+  }
+
+  #recognition .rc:not(.feat) .rc-photo.cut,
+  #recognition .rc:not(.feat) .rc-photo:not(.cert):not(.cut) {
+    width: 78%; margin: 0; translate: 0 0;
+    justify-self: center; align-self: center;
+    aspect-ratio: 1 / 1 !important;
+  }
+  #recognition .rc.feat .rc-photo.cut {
+    width: 100%; margin: 0; translate: 0 0;
+    justify-self: center; align-self: center;
+    aspect-ratio: 1 / 1 !important;
+  }
+  #recognition .rc:not(.feat) .rc-photo:not(.cert):not(.cut) img {
+    object-fit: contain; background: #fff;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 980px) {
+  #recognition .rc:has(.rc-photo),
+  #recognition .rc:has(.rc-photo.cert),
+  #recognition .rc:has(.rc-photo.cut) { grid-template-columns: 64px minmax(0, 1fr) clamp(150px, 26vw, 210px); }
+  #recognition .rc.feat:has(.rc-photo),
+  #recognition .rc.feat:has(.rc-photo.cut) { grid-template-columns: 64px minmax(0, 1fr) clamp(140px, 22vw, 190px); }
+}
+
+    @media (max-width: 820px) {
+      .hero {
+        display: block;
+        padding-top: 110px;
+      }
+
+      .portrait {
+        margin: 44px 0 0;
+        width: 100%;
+        max-width: var(--hero-image-max-width);
+      }
+
+      .portrait-frame {
+        aspect-ratio: var(--hero-image-ratio-mobile);
+      }
+
+      .facets{--facets-h:clamp(300px,90vw,460px)}
+.facet:nth-child(1),.facet:nth-child(5){display:none}
+.facet:nth-child(3){flex:1.4}
+
+      .vertical-label {
+        display: none;
+      }
+
+      .project-index {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .work {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tile {
+        grid-column: span 2 !important;
+      }
+
+      .tile--atrian,
+      .tile--gssa {
+        margin-top: 0 !important;
+      }
+
+      .cloud {
+        grid-template-columns: repeat(
+          var(--cloud-mobile-columns),
+          minmax(0, 1fr)
+        );
+        grid-auto-rows: var(--cloud-mobile-row-height);
+        gap: var(--cloud-mobile-gap);
+      }
+
+      .cloud figure {
+        grid-column: span 1;
+        grid-row: span var(
+          --mobile-rows,
+          var(--cloud-mobile-small-rows)
+        );
+        margin-top: 0 !important;
+      }
+
+      .cloud figure.lead {
+        grid-column: span 2;
+        grid-row: span var(
+          --mobile-lead-rows,
+          var(--cloud-mobile-lead-rows)
+        );
+      }
+
+      .mod {
+        grid-template-columns: 1fr;
+      }
+
+      #lightbox img {
+        max-height: 60vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        gap: 10px;
+      }
+
+      header nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 10px;
+      }
+
+      .hero {
+        padding-top: 136px;
+      }
+
+      .portrait {
+        max-width: 100%;
+      }
+
+      .project-index {
+        gap: 14px;
+      }
+
+      .cloud {
+        --cloud-mobile-gap: 9px;
+      }
+
+      .mod {
+        padding: 16px;
+      }
+
+      .mod dl {
+        grid-template-columns: 88px 1fr;
+        gap: 6px 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+@media (max-width: 980px) and (min-width: 681px) {
+  #recognition .rc:has(.rc-photo)      { grid-template-columns: 64px minmax(0, 1fr) clamp(140px, 22vw, 190px); }
+  #recognition .rc:has(.rc-photo.cert) { grid-template-columns: 64px minmax(0, 1fr) clamp(170px, 30vw, 240px); }
+  #recognition .rc .rc-photo.cut       { translate: -14px 0; }
+}
+
+@media (max-width: 680px) {
+  #recognition .rc,
+  #recognition .rc:has(.rc-photo) { grid-template-columns: 1fr; gap: 6px; padding: 24px 0; }
+  #recognition .rc.feat { padding: 24px 18px; border-radius: 24px 24px 24px 56px; }
+  #recognition .rc-year { padding-top: 0; }
+
+  #recognition .rc .rc-photo { width: min(46%, 170px); margin: 16px 0 0; }
+  #recognition .rc .rc-photo.cert { width: min(100%, 380px); margin: 18px auto 6px; rotate: -1deg; }
+  #recognition .rc .rc-photo.cut { width: min(56%, 190px); margin: 16px auto 0; translate: 0 0; }
+  #recognition .rc .rc-photo.cut { aspect-ratio: 1 / 1 !important; }
+}
+  </style>
+</head>
+
+<body>
+
+
+  <header>
+    <a href="#home">BERNARDO RENNER</a>
+
+    <nav aria-label="Main navigation">
+      <a href="#about">ABOUT</a>
+      <a href="#work">WORK</a>
+      <a href="#recognition">RECOGNITION</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+
+
+  <section id="home">
+
+    <div class="hero">
+
+      <div class="text">
+        <p class="eyebrow">Gravataí, Brazil · "Why", "How?", "When?"</p>
+
+        <h1>Pilot without <br>having the plane.</h1>
+
+        <p class="lead-p" style="margin-top:28px">
+          My work moves between research, software, and youth-led initiatives. <br>
+          More often than not, the interesting part begins when I take a step back... and the mark is already there.
+        </p>
+
+        <p>Let's begin!</p>
+
+        <a class="btn fill" href="#work">EXPLORE THE WORK →</a>
+        <a class="btn" href="#about">HOW I WORK</a>
+      </div>
+
+      <div class="portrait">
+        <span class="vertical-label">
+            Technology, Social Innovation & Go-getter
+        </span>
+
+        <div class="portrait-frame">
+          <img
+            src="BernardoRenner.jpeg"
+            alt="Bernardo seated in a green velvet armchair"
+          >
+        </div>
+
+        <div class="caption-line">
+          <span>Bernardo Renner</span>
+          <span>Gravataí, Brazil</span>
+        </div>
+      </div>
+
+      <nav class="project-index" aria-label="Featured projects">
+        <a href="#hada"><span>01</span>Hada</a>
+        <a href="#atrian"><span>02</span>Atrián</a>
+        <a href="#inova"><span>03</span>Inova Prado</a>
+        <a href="#community"><span>04</span>GSSA</a>
+      </nav>
+
+    </div>
+
+
+
+<div class="facets-section" id="work">
+    <h2>All sides included.</h2>
+    <p class="facets-sub">Reader discretion is advised.</p>
+  
+    <div class="facets">
+      <figure class="facet" style="--s:.66;--warm:.4;--bright:.988"><img src="mic3.jpeg" alt="" onerror="this.parentNode.classList.add('empty')"></figure>
+      <figure class="facet" style="--s:.86;--warm:.55;--bright:.988"><img src="mic5.png" alt="" onerror="this.parentNode.classList.add('empty')"></figure>
+      <figure class="facet" style="--s:1;--pos:center 30%"><img src="micc.jpeg" alt="Bernardo speaking on stage" onerror="this.parentNode.classList.add('empty')"></figure>
+      <figure class="facet" style="--s:.86;--warm:.5;--bright:.99;--sat:1.1"><img src="hallcity2.jpeg" alt="" onerror="this.parentNode.classList.add('empty')"></figure>
+      <figure class="facet" style="--s:.66"><img src="mic4.jpeg" alt="" onerror="this.parentNode.classList.add('empty')"></figure>
+    </div>
+  </div>
+
+  </section>
+
+  <div class="slant"></div>
+
+
+
+
+       <section id="hada">
+        <img class="hada-watermark" src="hada-mark.png" alt="" aria-hidden="true" onerror="this.remove()">
+        <div class="w">
+      
+          <img class="hada-logo" src="hada-logo.png" alt="Hada" onerror="this.outerHTML='<span class=hada-wordmark>Hada</span>'">
+          <p class="hada-pill"><span class="hada-star">✱</span>Biodegradable aloe and chamomile healing bandage</p>
+      
+          <article class="hq hq--pill">
+            <span class="hq-mark">“</span>
+            <div class="hq-body">
+              <p>Hada placed Gravataí on the international sustainable-innovation map, showing that projects with global reach can emerge from local schools.</p>
+              <p class="hq-src">— Motion of Recognition from the Gravataí City Council, May 29, 2026.</p>
+            </div>
+            <img class="hq-logo" src="brasao-gravatai.png" alt="Gravataí coat of arms" onerror="this.remove()">
+          </article>
+          <a class="hada-doc" href="MOÇÃO 57 2026.pdf" target="_blank" rel="noopener">Read the original document (PDF)</a>
+      
+          <div class="cloud" data-gallery="hada" aria-label="Hada project photo gallery"></div>
+      
+          <div class="hada-duo">
+            <div class="stack">
+              <article class="hq hq--pill">
+                <span class="hq-mark">“</span>
+                <div class="hq-body">
+                  <h3>The Starting Question</h3>
+                  <p>Something as small as a bandage is used by millions of people every day, yet it creates waste and doesn't always support healing.</p>
+                  <p class="hq-src">— The Earth Prize Newsroom, May 17, 2026</p>
+                </div>
+                <img class="hq-logo" src="logo-earth-prize.png" alt="The Earth Prize" onerror="this.remove()">
+              </article>
+      
+              <article class="hq">
+                <span class="hq-mark">“</span>
+                <div class="hq-body">
+                  <h3>National Impact</h3>
+                  <p>A symbol of untapped potential amid limited support for basic research and bureaucratic barriers to youth patent registration. Rio Grande do Sul had seen only two high school scientific projects gain national recognition. It not only breaks this trend but also serves as an inspiration for other cities in the state to invest in youth innovation in the coming years.</p>
+                  <p class="hq-src">— Diário do Estado, national newspaper with +2 million monthly readers, May 19, 2026</p>
+                </div>
+              </article>
+            </div>
+      
+            <div class="vp">
+              <img class="vp-icon" src="icon-camera.png" alt="" onerror="this.remove()">
+              <h3>Viral Posts</h3>
+              <div class="posts">
+                <a class="post" href="https://www.google.com/goto?url=CAESYAHrOzAV1gof1Om1ST7DAphESlvg6DHPOaScuDOsao2rJPvyTXmqaSpoB3XTMeq7I7Y974zoXrs6MbSVHIeOcqroEzb8YVYy7g9f2FST8LZ8nqORAhkZH6BUSGKbhPShnw" target="_blank" rel="noopener"><img src="fatosdesconhecidos.png" alt="Viral Instagram post Fatos Desconhecidos" onerror="this.remove()"></a>
+                <a class="post" href="https://www.instagram.com/p/DY5Rhaau99j/" target="_blank" rel="noopener"><img src="ginaindelicada.png" alt="Viral Instagram post Gina Indelicada" onerror="this.remove()"></a>
+                <a class="post" href="https://www.instagram.com/p/DYk5K18kaN5/" target="_blank" rel="noopener"><img src="fofoqueism.png" alt="Viral Instagram post Fofoquei Santa Maria" onerror="this.remove()"></a>
+                <a class="post" href="https://www.instagram.com/p/DZQJAzoo8en/" target="_blank" rel="noopener"><img src="rrlpost.png" alt="Viral Instagram post Rafael Rodrigues Luiz" onerror="this.remove()"></a>
+                <a class="post" href="https://www.instagram.com/p/DZpxdP2lTcN/?img_index=10" target="_blank" rel="noopener"><img src="comecou.png" alt="Viral Instagram post Comecou" onerror="this.remove()"></a>
+                <a class="post" href="https://www.instagram.com/p/DZLhPqdyvC4/" target="_blank" rel="noopener"><img src="autoexplicando.png" alt="Viral Instagram post Autoexplicando" onerror="this.remove()"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="voices">
+            <div class="press-head"><h3>Voices that noticed</h3><span>Public mentions on social media</span></div>
+            <div class="voices-grid">
+          
+              <a class="voice" href="https://www.instagram.com/p/DasWDTUGjRi/" target="_blank" rel="noopener">
+                <div class="voice-photo"><img src="ricamorim.jpg" alt="Ricardo Amorim" loading="lazy" onerror="this.remove()"></div>
+                <div class="voice-body">
+                  <span class="voice-role">Brazil's most influential economist <br>(by Forbes)</span>
+                  <h3>Ricardo Amorim</h3>
+                  <span class="voice-meta">+6.5M followers (all platforms)</span>
+                  <p>Leading Latin American influencer on LinkedIn and a 13-time winner of the iBest Award for the country's best Economics and Business content</p>
+                  <span class="voice-cta">View the post ↗</span>
+                </div>
+              </a>
+          
+              <a class="voice" href="https://www.instagram.com/p/DZBdcR6j55F/?img_index=1" target="_blank" rel="noopener">
+                <div class="voice-photo"><img src="timesbrasil.png" alt="Times Brasil" loading="lazy" onerror="this.remove()"><span class="voice-logo"><img src="logo-times-brasil.png" alt="" onerror="this.remove()"></span></div>
+                <div class="voice-body">
+                  <span class="voice-role">1st national business channel with an international brand</span>
+                  <h3>Times Brasil</h3>
+                  <span class="voice-meta">+350M views & +40M viewers in 1st year.</span>
+                  <p>Exclusive licensee of CNBC, the world leader in business news, which is controlled by NBCUniversal, one of the largest media groups on the planet.</p>
+                  <span class="voice-cta">View the post ↗</span>
+                </div>
+              </a>
+          
+              <a class="voice" href="https://www.instagram.com/p/DY8NK79R2BQ/" target="_blank" rel="noopener">
+                <div class="voice-photo"><img src="startse.png" alt="Startse" loading="lazy" onerror="this.remove()"><span class="voice-logo"><img src="logo-startse.png" alt="" onerror="this.remove()"></span></div>
+                <div class="voice-body">
+                  <span class="voice-role">Brazil's leading international executive education hub</span>
+                  <h3>Startse</h3>
+                  <span class="voice-meta">
+                    +80K leaders trained in automation & AI.</span>
+                  <p> Part of an ecosystem generating R$ 1 billion in revenue, the company trains executives from  Accenture, Carrefour, Visa, BASF, and Ford to the world's leading innovation hubs.</p>
+                  <span class="voice-cta">View the post ↗</span>
+                </div>
+              </a>
+          
+            </div>
+          </div>
+      
+          <div class="hada-videos">
+
+            <div class="vcard">
+              <div class="vthumb">
+                <video controls playsinline preload="metadata">
+                  <source src="bandtv1.mp4" type="video/mp4">
+                  Your browser does not support this video.
+                </video>
+              </div>
+              <p>Aired on Jornal da Noite (Band TV), a premier national late-night news program with ~300K viewers across Brazil.</p>
+              <div class="vcard-link"><a href="https://youtu.be/bCyXSVzD6Eo?si=850QFVnorVr2n1F3" target="_blank" rel="noopener">Full report here ↗</a></div>
+            </div>
+          
+            <div class="vcard">
+              <div class="vthumb">
+                <video controls playsinline preload="metadata">
+                  <source src="jornaldoalmoco.mp4" type="video/mp4">
+                  Your browser does not support this video.
+                </video>
+              </div>
+              <p>Featured on Jornal do Almoço (RBS TV / Globo affiliate), southern Brazil's dominant midday news broadcast, engaging ~890K daily viewers across 40+ municipalities.</p>
+              <div class="vcard-link"><a href="https://globoplay.globo.com/v/14653853" target="_blank" rel="noopener">Full report here ↗</a></div>
+            </div>
+          
+          </div>
+          
+          <div class="press">
+            <div class="press-head"><h3>In the press</h3><span>Selected coverage · 2026</span></div>
+            <div class="press-grid">
+              <a class="news news--feat" href="https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/05/19/estudantes-do-rs-vencem-premio-internacional-de-inovacao-com-curativo-biodegradavel.ghtml" target="_blank" rel="noopener"><span class="news-img"><img src="g1pics.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="news-meta"><img class="news-logo" src="g1-logo.png" alt="g1" onerror="this.remove()"><time>[May 19, 2026]</time></span><strong class="news-title">Students from Rio Grande do Sul win international innovation award with biodegradable bandage.</strong><span class="news-cta">Read the story ↗</span></a>
+          
+              <a class="news" href="https://www.band.com.br/saude/estudantes-gauchos-criam-curativo-100-organico-e-biodegradavel" target="_blank" rel="noopener"><span class="news-img"><img src="bandpic.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="news-meta"><img class="news-logo" src="bandlogo.svg" alt="[Outlet]" onerror="this.remove()"><time>[May 21, 2026]</time></span><strong class="news-title">Students from Rio Grande do Sul create a 100% organic and biodegradable bandage.</strong><span class="news-cta">Read the story ↗</span></a>
+              <a class="news" href="https://gauchazh.clicrbs.com.br/colunistas/rodrigo-lopes/noticia/2026/05/aos-17-anos-estudantes-do-rs-criam-curativo-biodegradavel-e-vencem-etapa-regional-de-premio-internacional-cmpcwrbxv00p1012gs0rkftc9.html" target="_blank" rel="noopener"><span class="news-img"><img src="gzhpics.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="news-meta"><img class="news-logo" src="gzhlogo.png" alt="[Outlet]" onerror="this.remove()"><time>[May 19, 2026]</time></span><strong class="news-title">17-year-old students from Rio Grande do Sul create a biodegradable bandage and win the regional stage of an international award.</strong><span class="news-cta">Read the story ↗</span></a>
+              <a class="news" href="https://diariodoestadogo.com.br/gravatai-rs-estudantes-vencem-premio-internacional-com-curativo-biodegradavel/" target="_blank" rel="noopener"><span class="news-img"><img src="depic.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="news-meta"><img class="news-logo" src="de.png" alt="[Outlet]" onerror="this.remove()"><time>[May 19, 2026]</time></span><strong class="news-title">Gravataí (RS): Students win international award with biodegradable bandage</strong><span class="news-cta">Read the story ↗</span></a>
+              <a class="news" href="https://jornalnoroeste.com.br/noroestefm/noticia/geral/curativo-biodegradavel-criado-por-estudantes-gauchos-vence-premio-ambiental-internacional" target="_blank" rel="noopener"><span class="news-img"><img src="noroestepics.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="news-meta"><img class="news-logo" src="noroestelogo.png" alt="[Outlet]" onerror="this.remove()"><time>[June 5, 2026]</time></span><strong class="news-title">Biodegradable bandage created by students from Rio Grande do Sul wins international award.</strong><span class="news-cta">Read the story ↗</span></a>
+          
+              <a class="news" href="https://www.jornaldocomercio.com/colunas/mercado-digital/2026/06/1251596-estudantes-de-17-anos-do-sinodal-prado-vencem-the-earth-prize-2026.html" target="_blank" rel="noopener"><span class="news-img"><img src="jcpics.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="news-meta"><img class="news-logo" src="jc-logo.webp" alt="[Outlet]" onerror="this.remove()"><time>[June 8, 2026]</time></span><strong class="news-title">17-year-old students from Sinodal Prado win The Earth Prize 2026</strong><span class="news-cta">Read the story ↗</span></a>
+              <a class="news" href="https://neomondo.org.br/slider/o-curativo-que-some-em-48-horas-dois-estudantes-de-gravatai-contra-os-22-bilhoes-de-bandagens-plasticas-descartadas-em-um-ano" target="_blank" rel="noopener"><span class="news-img"><img src="neomondopics.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="news-meta"><img class="news-logo" src="neomondologo.png" alt="[Outlet]" onerror="this.remove()"><time>[August 18, 2026]</time></span><strong class="news-title">The bandage that disappears in 48 hours: two students from Gravataí take on the 2.2 billion plastic bandages discarded in a year.</strong><span class="news-cta">Read the story ↗</span></a>
+              <a class="news" href="https://www.terra.com.br/byte/ciencia/estudantes-gauchos-criam-curativo-de-babosa-e-camomila-que-desaparece-em-48h-e-ganham-o-maior-premio-ambiental-jovem-do-mundo,86f546fbea26e0190c56b0de98db4bfegslonzmv.html" target="_blank" rel="noopener"><span class="news-img"><img src="terrapic.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="news-meta"><img class="news-logo" src="terralogo.png" alt="[Outlet]" onerror="this.remove()"><time>[June 3, 2026]</time></span><strong class="news-title">
+                Students from Rio Grande do Sul create an aloe vera and chamomile bandage that disappears in 48 hours and win the world's top environmental award for youth</strong><span class="news-cta">Read the story ↗</span></a>
+              <a class="news" href="https://selecoes.ig.com.br/saude/estudantes-de-17-anos-criam-curativo-biodegradavel-feito-de-babosa-e-camomila-que-acelera-a-cicatrizacao/" target="_blank" rel="noopener"><span class="news-img"><img src="selecoespic.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="news-meta"><img class="news-logo" src="selecoesbrasil_logo.png" alt="[Outlet]" onerror="this.remove()"><time>[July 14, 2026]</time></span><strong class="news-title">
+                17-year-old students create a biodegradable bandage made from aloe vera and chamomile that accelerates healing.</strong><span class="news-cta">Read the story ↗</span></a>
+            </div>
+          </div>
+      </section>
+
+
+      <div class="atrian-region">
+
+        <div class="slant-atr" aria-hidden="true">
+          <span class="hada-wedge"></span>
+          <span class="spark"></span>
+        </div>
+
+
+
+       <section id="atrian">
+        <img class="atrian-watermark" src="atrian-mark.png" alt="" aria-hidden="true" onerror="this.remove()">
+        <div class="w">
+      
+         
+          <div class="atrian-heading">
+            <img
+              class="atrian-logo"
+              src="atrian-mark.png"
+              alt=""
+              aria-hidden="true"
+              onerror="this.remove()"
+            >
+            <h2 class="atrian-wordmark">Atrián</h2>
+          </div>
+          <p class="atrian-pill"><span class="atrian-star">✦</span>Young ideas. Real solutions.</p>
+      
+          <div class="stats">
+            <div><b>13</b><span class="tag"> Hr/wk saved avg.</span></div>
+            <div><b>11K+</b><span class="tag">People reached</span></div>
+            <div><b>6</b><span class="tag">Projects delivered</span></div>
+          </div>
+      
+          <article class="hq hq--pill">
+            <span class="hq-mark">“</span>
+            <div class="hq-body">
+              <h3>Our purpose</h3>
+              <p>A student-led initiative focused on developing technological solutions applicable to real-world problems. The group operates on two fronts: the development of institutional websites and systems automation [...] Atrián’s primary objective is the professional development of its members and those who benefit from its work in the fields of programming and systems management [...] Atrián strives to leave a legacy of solidarity and practical experience for future generations.</p>
+              <p class="hq-src">— Mais Matéria newspaper, October 24, 2026</p>
+              <a class="hq-link" href="https://maismateria.com.br/atrian-conecta-aprendizado-tecnico-e-empreendedorismo-estudantil-no-colegio-sinodal-prado-gravatai/" target="_blank" rel="noopener">Read the story ↗</a>
+            </div>
+            <a class="hq-logo-link" href="https://maismateria.com.br/atrian-conecta-aprendizado-tecnico-e-empreendedorismo-estudantil-no-colegio-sinodal-prado-gravatai/" target="_blank" rel="noopener" aria-label="Read the story">
+              <img class="hq-logo" src="maismateria-logo.png" alt="[Nome do jornal]" onerror="this.parentNode.remove()">
+            </a>
+          </article>
+      
+       
+          <p class="eyebrow" style="margin-top:clamp(64px,9vw,110px)">Built through Atrián</p>
+          <div class="cases" id="atrian-cases"></div>
+      
+          <p class="eyebrow">Beyond the code</p>
+          <div class="cloud" data-gallery="atrian" aria-label="Atrián project photo gallery"></div>
+      
+          <p class="quote">
+            We seek to extract the maximum equitable power of multilocal technology.
+          </p>
+      
+          <a class="btn fill" href="https://instagram.com/atrianrs" target="_blank" rel="noopener">@ATRIANRS ↗</a>
+          <a class="btn" href="mailto:atrianrs@gmail.com">ATRIANRS@GMAIL.COM</a>
+      
+        </div>
+      </section>
+    </div>
+
+
+
+
+
+  <section id="inova">
+    <div class="w">
+      <img class="inv-emblem" src="inovaprado-logo.png" alt="" aria-hidden="true" onerror="this.remove()">
+      <p class="eyebrow">Leadership through execution</p>
+    <div class="inv-heading">
+      <h2 class="inv-wordmark">Inova Prado</h2>
+    </div>
+    <p class="inv-pill"><span class="inv-star">✦</span>Making room for young ideas to become working projects.</p>
+
+    <p class="lead-p">
+      I organized and hosted Inova Prado, the <span class="destaque">region’s first student innovation hackathon</span>. Prizes included 6,000.00 BRL, a trip to Semana Caldeira (one of the state’s largest innovation events, with +15K participants), and entry into a deep-tech incubation program at Unisinos (one of the state’s largest and most renowned universities).
+    </p>
+    
+
+    <div class="stats">
+      <div><b>161</b><span class="tag">Participants</span></div>
+      <div><b>24</b><span class="tag">Institutions</span></div>
+      <div><b>7</b><span class="tag">Municipalities</span></div>
+    </div>
+
+    <div class="inv-chapter">
+      <span class="inv-num">01</span>
+      <div>
+        <p class="eyebrow">On the road</p>
+        <h3>Knocking on every door</h3>
+        <p>Before there was a hackathon, there were visits. We went to the schools in person to invite students to take part.</p>
+      </div>
+    </div>
+    <div class="cloud" data-gallery="inovavisit" aria-label="School visits gallery"></div>
+
+    <div class="inv-chapter">
+      <span class="inv-num">02</span>
+      <div>
+        <p class="eyebrow">Backed by</p>
+        <h3>Who made it possible</h3>
+        <p>Six institutions backed Inova Prado and helped turn it into a real event.</p>
+      </div>
+    </div>
+    <div class="inv-sponsors" id="inova-sponsors"></div>
+
+    <div class="inv-chapter">
+      <span class="inv-num">03</span>
+      <div>
+        <p class="eyebrow">The day itself</p>
+        <h3>All of it, in one place</h3>
+        <p>Mentors, teams, pitches, judges and the moment the winners were announced.</p>
+      </div>
+    </div>
+    <div class="cloud" data-gallery="inova" aria-label="Inova Prado event gallery"></div>
+
+  </div>
+</section>
+
+
+  <div class="fade" style="--a:#141313;--b:#f4f2ee"></div>
+
+
+
+       <section id="community">
+        <div class="w">
+      
+          <p class="eyebrow">Community</p>
+          <h2>Other projects</h2>
+          <p class="lead-p">Volunteering, civic tech and the work I took part in beyond the headline projects.</p>
+      
+          <div class="cm-chapter">
+            <span class="cm-num">01</span>
+            <div>
+              <p class="eyebrow">Volunteering</p>
+              <h3>Interact Gravataí-Prado</h3>
+              <p>Executive Director of Project Development of the Gravataí chapter of Rotary International's Global Youth Service Network </p>
+            </div>
+          </div>
+          <div class="stats">
+            <div><b>50+</b><span class="tag">Active volunteers</span></div>
+            <div><b>4.9K+</b><span class="tag">People impacted</span></div>
+            <div><b>2𝐱  awarded</b><span class="tag">Best Project Development in District</span></div>
+          </div>
+          <a class="btn" href="#atrian">PLATFORM BUILT BY ATRIÁN ↗</a>
+      
+          <article class="hq hq--pill">
+            <span class="hq-mark">*</span>
+            <div class="hq-body">
+              <h3>My role</h3>
+              <p>I developed, cocreated and executed <span class="destaque">19 projects</span>, including clothing drives, initiatives to teach technology in daycare centers, recreational activities for Children’s Day and Easter, and the installation of cigarette butt receptacles throughout the city, in agreement with the local government.  I also raised <span class="destaque">+13K BRL</span> ($2,500) and <span class="destaque">+4.7 tons of food</span> through the weekly sale of brigadeiros, jar cakes, and local culinary items, as well as the monthly collection of hundreds of kilograms of food in partnership with the Gravataí Food Bank.</p>
+              <p class="hq-src"> Interact Gravataí-Prado, 2025-2026</p>
+            </div>
+          </article>
+      
+          <div class="cloud" data-gallery="interact" aria-label="Interact project gallery"></div>
+      
+          <div class="cols">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </div>
+      
+          <div class="cm-chapter">
+            <span class="cm-num">02</span>
+            <div>
+              <p class="eyebrow">Civic tech</p>
+              <h3>GSSA: Gravataí Support &amp; Shelter Assist</h3>
+              <p>Built in response to the 2024 floods in Rio Grande do Sul, GSSA was designed to help people locate shelters and understand available assistance through a lightweight web platform.</p>
+            </div>
+          </div>
+          <div class="stats">
+            <div><b>+25</b><span class="tag">[Shelters mapped]</span></div>
+            <div><b>6</b><span class="tag">Scretaries involved</span></div>
+            <div><b>$0</b><span class="tag">cost for the user</span></div>
+          </div>
+      
+          <div class="cloud" data-gallery="gssa" aria-label="GSSA project gallery"></div>
+      
+          <p class="eyebrow" style="margin-top:clamp(64px,9vw,110px)">Recognition</p>
+          <div class="cm-duo">
+            <div class="aw-col">
+              <article class="hq hq--pill">
+                <span class="hq-mark">“</span>
+                <div class="hq-body">
+                  <p class="eyebrow" style="margin:0 0 8px">NFTE · 2025</p>
+                  <h3>NFTE World Series of Innovation - Climate Action</h3>
+                  <p>A global competition that engages over 10,000 young people from dozens of countries each year to create business solutions aligned with the UN SDGs.</p>
+                </div>
+                <img class="hq-logo" src="nfte-logo.png" alt="NFTE" onerror="this.remove()">
+              </article>
+          
+              <div class="aw-tiles">
+                <div class="aw-tile"><b>Top 10</b><span>among +4,000 students</span></div>
+                <div class="aw-tile t-blue"><b>1st</b><span>Brazilian to reach the Top 10</span></div>
+                <div class="aw-tile t-navy"><b>+90</b><span>countries in the competition</span></div>
+                <div class="aw-tile t-gold"><b>Honorary<br>Ambassador</b><span>of NFTE in Brazil</span></div>
+              </div>
+            </div>
+          
+            <a class="aw-post" href="https://www.instagram.com/p/DXcFuEKjIOw/" target="_blank" rel="noopener">
+              <div class="aw-shot"><img src="nftepost.jpeg" alt="NFTE's award announcement" onerror="this.remove()"></div>
+              <span class="aw-cap">NFTE's recognition - View the post ↗</span>
+            </a>
+          </div>
+      
+          <div class="cm-chapter">
+            <span class="cm-num">03</span>
+            <div>
+              <p class="eyebrow">Wall</p>
+              <h3>More participations &amp; impact</h3>
+              <p>A wall of other projects I took part in.</p>
+            </div>
+          </div>
+          <div class="cloud" data-gallery="other" aria-label="Other projects gallery"></div>
+      
+        </div>
+      </section>
+      
+      
+      <div class="fade" style="--a:#f4f2ee;--b:#12141a"></div>
+      
+      
+      <section id="recognition">
+        <div class="w">
+      
+          <p class="eyebrow">Archive</p>
+          <h2 class="inv-wordmark">Recognition</h2>
+          <p class="lead-p">A collection of main honors, awards and public recognitions. </p>
+      
+          <p class="eyebrow" style="margin-top:clamp(40px,6vw,64px)">Titles</p>
+          <div class="ft-grid" id="rec-flagships"></div>
+      
+          <p class="eyebrow">The full record</p>
+          <div id="rec-groups"></div>
+      
+        </div>
+      </section>
+
+
+      <footer id="contact">
+        <div class="w">
+      
+          <div id="about">
+            <p class="eyebrow">About</p>
+            <h2>That was a little about how I work</h2>
+          </div>
+      
+          <div class="ft-contact">
+            <h2 style="font-size:36px">Let's talk.</h2>
+      
+            <p>I hope you enjoyed the trip</p>
+      
+            <p class="meta">
+              <a href="mailto:bernardomrenner08@gmail.com">EMAIL</a> ·
+              <a href="https://www.linkedin.com/in/bernardo-mattos-renner-587ab4367/" target="_blank" rel="noopener">LINKEDIN</a> ·
+              <a href="https://www.instagram.com/bernardorenner_/" target="_blank" rel="noopener">INSTAGRAM</a>
+            </p>
+      
+            <p class="meta">© 2026 Bernardo Renner</p>
+          </div>
+      
+        </div>
+      </footer>
+
+
+
+
+  <div
+    id="lightbox"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image viewer"
+  >
+    <button type="button" aria-label="Close image viewer">×</button>
+
+    <div class="lightbox-content">
+      <img alt="">
+
+      <div class="lightbox-copy">
+        <p
+          id="lightbox-caption"
+          style="font-family:var(--serif);font-size:22px"
+        ></p>
+
+        <p id="lightbox-meta" class="meta" style="margin:0"></p>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const GALLERIES = {
+
+
+         hada: [
+  {file:'hadanoslegal.jpg',x:1,y:1,cols:6,rows:6,mobileRows:8,caption:'In the lab, during the RBS TV report',meta:'Co-creators of Hada',className:'lead shape-br',position:'center 35%'},
+  {type:'video',file:'hadaamostra1.mp4',x:7,y:1,cols:3,rows:4,mobileRows:4,caption:'Hada sample'},
+  {type:'video',file:'hadaamostra3.mp4',x:10,y:1,cols:3,rows:4,mobileRows:4,caption:'Hada sample'},
+  {type:'text',variant:'green',big:'≤ 48 h',small:'Biodegradation, documented conditions',className:'m-wide',x:7,y:5,cols:6,rows:2,mobileRows:4},
+
+  {file:'hadaamostra2.jpg',x:1,y:7,cols:3,rows:4,mobileRows:5,caption:'The dressing in a petri dish'},
+  {file:'hadaamostra.png',x:4,y:7,cols:3,rows:4,mobileRows:5,caption:'The prototype, held in hand'},
+  {type:'text',variant:'white',big:'From the volleyball court to the laboratory.',className:'t-sm m-wide',x:1,y:11,cols:6,rows:2,mobileRows:4},
+  {file:'hadalab.png',x:7,y:7,cols:6,rows:6,mobileRows:8,caption:'Preparing Hada in the laboratory',className:'lead shape-tl'},
+
+  {file:'hadafotonos.jpg',x:1,y:13,cols:5,rows:4,mobileRows:6,caption:'Our "oficial" photo',position:'center 30%'},
+  {file:'hadanosreporteres.jpg',x:6,y:13,cols:4,rows:4,mobileRows:5,caption:'Being interviewed by reporters'},
+  {file:'hadareporteres.jpg',x:10,y:13,cols:3,rows:4,mobileRows:5,caption:'Recorded by journalists'},
+
+  {type:'video',file:'hadadiscurso.mp4',sound:true,x:1,y:17,cols:3,rows:7,mobileRows:13,caption:'My speech at the City Council',className:'m-tall'},
+  {file:'hadacamara.png',x:4,y:17,cols:5,rows:4,mobileRows:8,caption:'Receiving the Motion of Recognition',meta:'Gravataí City Council',className:'lead'},
+  {file:'hadacamara2.jpg',x:9,y:17,cols:4,rows:4,mobileRows:6,caption:'Beside the Council president',meta:'Gravataí City Council session'},
+  {file:'hadamocao.jpg',x:4,y:21,cols:3,rows:3,mobileRows:5,caption:'Receiving the transcribed motion',meta:'Gravataí City Hall'},
+  {file:'hadacaldeira.jpg',x:7,y:21,cols:3,rows:3,mobileRows:5,caption:'Presenting the prototype to an evaluator',meta:'Instituto Caldeira'},
+  {file:'hadapradotech.jpg',x:10,y:21,cols:3,rows:3,mobileRows:5,caption:'Recognition at Prado Tech',meta:'With a Rio Grande do Sul state secretary and Carlos Johannpeter'},
+
+  {file:'hadaprofs.jpg',x:1,y:24,cols:5,rows:5,mobileRows:6,caption:'With our faculty advisors',className:'shape-bl'},
+  {file:'hadamultifeira.png',x:6,y:24,cols:4,rows:5,mobileRows:6,caption:'One of our science-fair participations'},
+  {file:'hadacodes.png',x:10,y:24,cols:3,rows:3,mobileRows:5,caption:'Lecture at the Socio-Economic Development Council (CODES)'},
+  {type:'text',variant:'ink',big:'Earth Prize 2026',small:'Central & South America',className:'t-sm m-wide',x:10,y:27,cols:3,rows:2,mobileRows:4},
+ 
+],
+
+
+
+         atrian: [
+  {file:'fcs.jpeg',x:1,y:1,cols:9,rows:8,mobileRows:8,caption:'Delivering the automated system to Fundação Casa dos Sonhos',meta:'Our first partnership',className:'lead shape-br',position:'center 40%'},
+  {type:'video',file:'atrianfcs.mp4',x:10,y:1,cols:3,rows:4,mobileRows:4,caption:'The handover day',showCaption:true,className:'shape-tr'},
+  {type:'video',file:'startup.mp4',x:10,y:5,cols:3,rows:4,mobileRows:4,caption:'Startup na Mochila: guiding students from peripheral schools as they idealize companies',showCaption:true},
+
+  {file:'eneirs.jpeg',x:1,y:9,cols:5,rows:4,mobileRows:5,caption:'Presenting at ENEI-RS',meta:'National Early Childhood Education Meeting'},
+  {file:'eneirspublic.jpeg',x:6,y:9,cols:4,rows:4,mobileRows:5,caption:'The ENEI-RS audience',meta:'250+ educators'},
+  {type:'video',file:'reuniao.mp4',x:10,y:9,cols:3,rows:4,mobileRows:4,caption:'Behind the scenes: our team meeting',showCaption:true,className:'shape-bl'},
+
+  {file:'atriancaldeira.jpeg',x:1,y:13,cols:4,rows:6,mobileRows:6,caption:'Professional training at Instituto Caldeira',className:'shape-tl'},
+  {file:'atriancaldeira2.jpeg',x:5,y:13,cols:4,rows:6,mobileRows:6,caption:'Receiving the Best Young Startup award at Caldeira',meta:'Most Promising Young Startup 2025'},
+  {file:'nasa.jpeg',x:9,y:13,cols:4,rows:6,mobileRows:6,caption:'NASA Space Apps Challenge',meta:'Team Atrián, Honorable Mention'},
+
+   {type:'video',file:'prompt.mp4',x:1,y:19,cols:3,rows:3,mobileRows:4,caption:'Prompt engineering class for General Motors students',showCaption:true,className:'shape-tl'},
+  {type:'text',variant:'ink',big:'11K+',small:'People reached',x:4,y:19,cols:3,rows:3,mobileRows:4},
+  {type:'text',variant:'purple',big:'Young ideas. Real solutions.',small:'Teaching, building and delivering',className:'m-wide',x:1,y:22,cols:6,rows:5,mobileRows:5},
+  {type:'video',file:'maismateria.mp4',x:7,y:19,cols:6,rows:8,mobileRows:8,caption:'Featured by the Mais Matéria newspaper',showCaption:true,className:'shape-br m-wide'}
+],
+
+
+    
+
+         inovavisit: [
+  {file:'dom.jpeg',x:1,y:1,cols:7,rows:6,mobileRows:8,caption:'Visiting schools in person to invite students',meta:'Before the event',className:'lead shape-br'},
+  {file:'sesi2.jpeg',x:8,y:1,cols:5,rows:3,mobileRows:5,caption:'',className:'shape-tr'},
+  {file:'gensa.jpeg',x:8,y:4,cols:5,rows:3,mobileRows:5,caption:''},
+  {file:'sinodalsl.jpeg',x:1,y:7,cols:4,rows:4,mobileRows:5,caption:'',className:'shape-bl'},
+  {file:'barbosa.jpeg',x:5,y:7,cols:4,rows:4,mobileRows:5,caption:''},
+  {file:'barbosa2.jpeg',x:9,y:7,cols:4,rows:4,mobileRows:5,caption:''}
+],
+
+inova: [
+  {file:'public.jpeg',x:1,y:1,cols:8,rows:6,mobileRows:8,caption:'All participants of Inova Prado',meta:'161 participants · 24 institutions · 7 municipalities',className:'lead shape-br',position:'center 45%'},
+  {type:'video',file:'host.mp4',x:9,y:1,cols:4,rows:6,mobileRows:8,caption:'Hosting on stage',className:'shape-tr m-wide',position:'center 0%'},
+
+
+  {file:'mentors.jpeg',x:1,y:7,cols:5,rows:5,mobileRows:6,caption:'The mentors',className:'shape-bl'},
+  {file:'groups.jpeg',x:6,y:7,cols:7,rows:5,mobileRows:6,caption:'Teams at work',className:'m-wide'},
+  {file:'groups2.jpeg',x:1,y:12,cols:6,rows:4,mobileRows:6,caption:'Building the projects',className:'m-wide'},
+  {file:'groups3.jpeg',x:7,y:12,cols:6,rows:4,mobileRows:6,caption:'Brainstorming',className:'shape-tr m-wide'},
+  {file:'judges.jpeg',x:1,y:16,cols:6,rows:4,mobileRows:6,caption:'The judges',className:'m-wide'},
+  {file:'pitch.jpeg',x:7,y:16,cols:6,rows:4,mobileRows:6,caption:'A team pitching',className:'m-wide'},
+
+  {type:'video',file:'host3.mp4',x:1,y:20,cols:4,rows:5,mobileRows:5,caption:'Presenting the program'},
+  {file:'host.jpeg',x:5,y:20,cols:4,rows:5,mobileRows:5,caption:'Speaking to the participants'},
+  {type:'video',file:'host2.mp4',x:9,y:20,cols:4,rows:5,mobileRows:5,caption:'Opening presentation',showCaption:true,className:'shape-tr',zoom:1.3},
+
+  {file:'medals.jpeg',x:1,y:25,cols:8,rows:6,mobileRows:8,caption:'The medals',className:'lead shape-tl'},
+  {file:'ornament.jpeg',x:9,y:25,cols:4,rows:3,mobileRows:5,caption:'The event decoration',className:'shape-tr'},
+  {file:'speech.jpeg',x:9,y:28,cols:4,rows:3,mobileRows:4,caption:'The speakers'},
+
+  {type:'video',file:'inovasite.mp4',x:1,y:31,cols:6,rows:5,mobileRows:6,caption:'The official Inova Prado website',showCaption:true,className:'shape-br m-wide tone-warm'},
+  {type:'video',file:'pitch.mp4',x:7,y:31,cols:3,rows:5,mobileRows:9,caption:'Pitches in front of the judges',showCaption:true,className:'shape-tl m-wide',position:'center 25%'},
+  {type:'video',file:'groups.mp4',x:10,y:31,cols:3,rows:5,mobileRows:5,caption:'Participant certificates'}
+],
+
+
+    
+
+         gssa: [
+         {type:'video',file:'gssa.mp4',controls:true,x:1,y:1,cols:8,rows:6,mobileRows:5,caption:'GSSA platform walkthrough',showCaption:true,className:'shape-br m-wide'},
+  {type:'text',variant:'blue',big:'From 2024 to Future',small:'Structured in the Post-Flood Period',className:'m-wide',x:9,y:1,cols:4,rows:6,mobileRows:4},
+ 
+],
+
+interact: [
+  {file:'interact.jpeg',x:1,y:1,cols:7,rows:6,mobileRows:8,caption:'Easter Volunteering Day',meta:'Interact Gravataí-Prado',className:'lead shape-br',position:'center 40%'},
+  {file:'conferencia.jpeg',x:8,y:1,cols:5,rows:3,mobileRows:5,caption:'Distrital Conference for Directors 2025',className:'shape-tr'},
+  {type:'video',file:'criancas.mp4',x:8,y:4,cols:5,rows:3,mobileRows:5,caption:'Volunteering at daycare',showCaption:true},
+  {file:'reuniao.jpeg',x:1,y:7,cols:4,rows:4,mobileRows:5,caption:'One of our weekly meetings'},
+  {file:'interactfcs.jpeg',x:5,y:7,cols:4,rows:4,mobileRows:5,caption:'Gathering of volunteer professionals at Casa dos Sonhos, focused on healthcare, well-being, and citizenship.'},
+  {file:'comida.jpeg',x:9,y:7,cols:4,rows:4,mobileRows:5,caption:'One of our monthly food donations',className:'shape-br'},
+  {type:'video',file:'futebol.mp4',x:1,y:11,cols:4,rows:6,mobileRows:7,caption:'Offering a volunteer-led Children’s Day',showCaption:true,className:'shape-tl'},
+  {file:'bis.jpeg',x:5,y:11,cols:8,rows:6,mobileRows:8,caption:'Distributing chocolates at the Criança Esperança daycare center',className:'lead'},
+  {file:'idosos.jpeg',x:1,y:17,cols:4,rows:3,mobileRows:5,caption:'Donation of +150 books to public libraries'},
+  {file:'vendas.jpeg',x:5,y:17,cols:4,rows:3,mobileRows:5,caption:'One of our weekly sales'},
+  {file:'conferencia2.jpeg',x:9,y:17,cols:4,rows:3,mobileRows:5,caption:'Distrital Conference for Director 2026',className:'shape-br'},
+  {file:'crianca.jpeg',x:1,y:20,cols:3,rows:6,mobileRows:8,caption:'Ensuring the right to childhood',className:'shape-tl',position:'center 30%'},
+  {file:'comidaeu.jpeg',x:4,y:20,cols:3,rows:4,mobileRows:5,caption:'Food collections'},
+  {file:'prefeitura.jpeg',x:7,y:20,cols:3,rows:4,mobileRows:5,caption:'Proposal for installating cigarette butt receptacles, submitted to the mayor and the secretaries of infrastructure'},
+  {file:'idososviola.jpeg',x:10,y:20,cols:3,rows:4,mobileRows:5,caption:'Day at the Lar de Maria nursing home for the elderly',className:'shape-tr'},
+  {file:'posse.jpeg',x:4,y:24,cols:3,rows:2,mobileRows:5,caption:'......       New Rotary year',className:'shape-bl'},
+  {type:'text',variant:'navy',big:'"One Profits Most Who Serves Best"',small:'We are one of the Interact clubs with the highest level of participation and the largest number of members in the state, in just two years of history',className:'t-sm m-wide shape-br',x:7,y:24,cols:6,rows:2,mobileRows:4}
+],
+
+other: [
+  {file:'semanacaldeira.jpeg',x:1,y:1,cols:4,rows:5,mobileRows:6,caption:'Participation via Inova Prado and Caldeira Club in Semana Caldeira, huge innovation event with +15K participants',className:'shape-tl'},
+  {file:'southsummit.jpeg',x:5,y:1,cols:4,rows:5,mobileRows:6,caption:'Invited to South Summit, a premier global innovation and startup gathering with +24K attendees from +70 countries'},
+  {file:'websummit.jpeg',x:9,y:1,cols:4,rows:5,mobileRows:6,caption:'Invited to Web Summit, the world’s premier and largest technology conference',className:'shape-tr'},
+
+  {file:'tdc.jpeg',x:1,y:6,cols:3,rows:5,mobileRows:6,caption:'Selected by renowned tech university FIAP for The Dev Conference, Brazil’s largest event related to software development'},
+  {type:'video',file:'caldeiraclub.mp4',x:4,y:6,cols:3,rows:5,mobileRows:6,caption:'Caldeira Club last meeting - 56h immersion',showCaption:true},
+  {file:'oet.jpeg',x:7,y:6,cols:6,rows:5,mobileRows:6,caption:'Founded Technological Entrepreneurship Workshop, certification ceremony',className:'m-wide'},
+
+  {file:'band.jpeg',x:1,y:11,cols:6,rows:5,mobileRows:6,caption:'Cofounded Microfonia school band (2023-present)',className:'lead shape-bl m-wide'},
+  {file:'leadership.jpeg',x:7,y:11,cols:6,rows:5,mobileRows:6,caption:'Represented Gravataí in huge leadership conference for the 3 southern states in Brazil',className:'shape-br m-wide'}
+],
+
+
+    
+
+      recognition: [
+        {
+          file: 'rec-earth-prize.png',
+          cols: 4,
+          rows: 7,
+          mobileRows: 8,
+          caption: 'The Earth Prize 2026',
+          meta: 'Central & South America - 2026',
+          className: 'lead',
+          position: 'center'
+        },
+        {
+          file: 'rec-maratona-tech.png',
+          cols: 4,
+          rows: 6,
+          mobileRows: 7,
+          caption: 'Maratona Tech',
+          meta: '[Issuer] · [Year] · [Level]',
+          position: 'center'
+        },
+        {
+          file: 'rec-blue-ocean.png',
+          cols: 4,
+          rows: 5,
+          mobileRows: 6,
+          caption: 'Blue Ocean',
+          meta: '[Issuer] · [Year] · [Level]',
+          position: 'center'
+        },
+        {
+          file: 'rec-ja-18-under-18.png',
+          cols: 3,
+          rows: 5,
+          mobileRows: 6,
+          caption: 'JA 18 Under 18',
+          meta: '[Issuer] · [Year]',
+          position: 'center'
+        },
+        {
+          file: 'rec-codes.png',
+          cols: 3,
+          rows: 5,
+          mobileRows: 6,
+          caption: 'CODES',
+          meta: '[Issuer] · [Year]',
+          position: 'center'
+        },
+        {
+          file: 'rec-medalha-01.png',
+          cols: 3,
+          rows: 5,
+          mobileRows: 6,
+          caption: '[Medal name]',
+          meta: '[Issuer] · [Year]',
+          position: 'center'
+        }
+      ]
+
+    };
+
+
+
+    const EMBEDDED_SOURCES = {};
+
+    const imageSource = filename =>
+      EMBEDDED_SOURCES[filename] || `${filename}`;
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = lightbox.querySelector('img');
+
+    let lastFocusedElement = null;
+
+
+    const videoObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.play().catch(() => {});
+    else entry.target.pause();
+  });
+}, { threshold: 0.25 });
+    function addGalleryImages() {
+      document.querySelectorAll('[data-gallery]').forEach(gallery => {
+
+        const galleryItems = GALLERIES[gallery.dataset.gallery] || [];
+
+        galleryItems.forEach(item => {
+
+          const figure = document.createElement('figure');
+
+          figure.tabIndex = 0;
+          figure.className = item.className || '';
+
+          figure.dataset.file = item.file;
+          figure.dataset.caption = item.caption || '';
+          figure.dataset.meta = item.meta || '';
+
+          figure.style.setProperty('--cols', item.cols || 4);
+          figure.style.setProperty('--rows', item.rows || 5);
+          figure.style.setProperty('--mobile-rows', item.mobileRows || 5);
+          if (item.x) figure.style.setProperty('--x', item.x);
+if (item.y) figure.style.setProperty('--y', item.y);
+
+          figure.style.setProperty(
+            '--object-position',
+            item.position || 'center'
+          );
+          if (item.type === 'text') {
+  figure.tabIndex = -1;
+  figure.className = 'is-text v-' + (item.variant || 'white') + ' ' + (item.className || '');
+  figure.innerHTML = '<div class="t-big">' + item.big + '</div>' +
+    (item.small ? '<div class="t-small">' + item.small + '</div>' : '');
+  gallery.appendChild(figure);
+  return;
+}
+if (item.type === 'youtube') {
+  figure.tabIndex = -1;
+  figure.className = 'is-embed ' + (item.className || '');
+  const frame = document.createElement('iframe');
+  frame.src = `https://www.youtube.com/embed/${item.id}?rel=0&autoplay=1&mute=1&playsinline=1&modestbranding=1&iv_load_policy=3`;
+  frame.title = item.caption || 'Video';
+  frame.loading = 'lazy';
+  frame.referrerPolicy = 'strict-origin-when-cross-origin';
+  frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen';
+  frame.allowFullscreen = true;
+  figure.appendChild(frame);
+  gallery.appendChild(figure);
+  return;
+}
+if (item.type === 'video') {
+  figure.tabIndex = -1;
+  figure.className = 'is-video ' + (item.className || '');
+
+  const video = document.createElement('video');
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.preload = 'metadata';
+  video.setAttribute('muted', '');
+  if (item.controls) { video.controls = true; video.loop = false; }
+  if (item.zoom) video.style.transform = `scale(${item.zoom})`;
+
+  const source = document.createElement('source');
+  source.src = imageSource(item.file);
+  source.type = 'video/mp4';
+  source.onerror = () => figure.classList.add('empty');
+  video.appendChild(source);
+  figure.appendChild(video);
+
+  if (item.sound) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'v-sound';
+    btn.textContent = 'Sound on';
+    btn.setAttribute('aria-label', 'Turn sound on or off');
+    btn.onclick = event => {
+      event.stopPropagation();
+      video.muted = !video.muted;
+      if (!video.muted) video.currentTime = 0;
+      btn.textContent = video.muted ? 'Sound on' : 'Mute';
+    };
+    figure.appendChild(btn);
+  }
+  if (item.showCaption) {
+    const cap = document.createElement('figcaption');
+    cap.textContent = item.caption || '';
+    figure.appendChild(cap);
+  }
+  videoObserver.observe(video);
+  gallery.appendChild(figure);
+  return;
+}
+
+          const image = document.createElement('img');
+
+          image.loading = 'lazy';
+          image.alt = item.alt || item.caption || '';
+          image.src = imageSource(item.file);
+
+          image.onerror = () => figure.classList.add('empty');
+
+          const caption = document.createElement('figcaption');
+          caption.textContent = item.caption || '';
+
+          figure.append(image, caption);
+          gallery.appendChild(figure);
+
+        });
+      });
+    }
+
+
+
+    function fixStaticImages() {
+      document.querySelectorAll('.tile img, .portrait img').forEach(image => {
+
+        const currentSource = image.getAttribute('src') || '';
+        const filename = currentSource.replace(/^images\//, '');
+
+        image.src = imageSource(filename);
+
+        image.onerror = () => {
+
+          const box = image.closest('.image-box, .portrait-frame');
+
+          if (box) {
+            box.style.background = 'rgba(128,128,128,.12)';
+            image.style.visibility = 'hidden';
+          }
+
+        };
+      });
+    }
+
+
+
+    function openLightbox(figure) {
+      const image = figure.querySelector('img');
+
+      lastFocusedElement = document.activeElement;
+
+      const imageIsAvailable =
+        image && !figure.classList.contains('empty');
+
+      lightboxImage.src = imageIsAvailable ? image.src : '';
+      lightboxImage.hidden = !imageIsAvailable;
+      lightboxImage.alt = imageIsAvailable ? image.alt : '';
+
+      document.getElementById('lightbox-caption').textContent =
+        figure.dataset.caption || '';
+
+      document.getElementById('lightbox-meta').textContent =
+        figure.dataset.meta || '';
+
+      lightbox.hidden = false;
+      lightbox.querySelector('button').focus();
+    }
+
+
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+
+      if (
+        lastFocusedElement &&
+        typeof lastFocusedElement.focus === 'function'
+      ) {
+        lastFocusedElement.focus();
+      }
+    }
+
+
+   const CASES = [
+  {
+    n:'01', tag:'Management system', org:'Fundação Casa dos Sonhos',
+    sub:'~300 children and teens in social vulnerability',
+    before:'Paper records, easy to mix up, swap or, worse, lose.',
+    after:'A record system that stores personal data, gathers attendance lists, shows charts with students grouped by category and exports automatically PDF reports to the municipal government, all saved safely in the cloud.',
+    chips:['Personal data','Attendance','Charts','PDF reports','Cloud'],
+    video:'fcs.mp4', link:''
+  },
+  {
+    n:'02', tag:'Management platform', org:'Interact Club Gravataí-Prado',
+    sub:'+50 active volunteers, +4.9K people impacted',
+    before:'A volunteering club running attendance, minutes, finances and agenda through WhatsApp and Excel.',
+    after:'A platform for member registration, attendance at meetings and events, attendance charts, reminders for relevant dates and financial management (donations, fundraising, dues).',
+    chips:['Members','Attendance','Charts','Reminders','Finance'],
+    video:'interactprado.mp4', link:''
+  },
+  {
+    n:'03', tag:'Official website', org:'AICA',
+    sub:'Associação Irmãos do Caminho NGO, annual impact of +5.3K people',
+    before:'A institution with no attractive or informative online presence.',
+    after:'Official website with essential information, clear and intuitive design, animations, contact tabs and photo and video galleries.',
+    chips:['Clear design','Animations','Contact','Gallery'],
+    video:'aica.mp4', link:''
+  },
+  {
+    n:'04', tag:'Website + live coverage', org:'ENEI-RS',
+    sub:'National Early Childhood Education Meeting, +250 attendees',
+    before:'Educators from the three southern states gathered with no updates on how the event was going.',
+    after:'An official website with the event schedule and speakers, plus an exclusive tab where the Atrián team published real-time news with photos, quotes and descriptive texts throughout the event.',
+    chips:['Schedule','Speakers','Real-time news','Photos & quotes'],
+    video:'eneirs.mp4', link:''
+  },
+  {
+    n:'05', tag:'Eldery Institution', org:'SABEVE',
+    sub:'Non-profit long-term care facility for +300 elderly',
+    before:'A institution with no attractive or informative online presence.',
+    after:'An official website for an institution with a 56-year history, featuring records of its services and galleries of its work.',
+    chips:['Gallery','Digital presence','Online records'],
+    video:'sabeve.mp4', link:''
+  },
+  {
+    n:'06', tag:'Management System', org:'S.E.A.S',
+    sub:'~650 registered students',
+    before:'School lacking unified records for quarterly grades, automated distribution of informational emails by the administrative office, and proper logistics for the acquisition of lockers',
+    after:'Official platform for the student body, faculty, and administrative staff, featuring a streamlined interface and high efficiency.',
+    chips:['Logistics','Reports and emails','Inner communication'],
+    video:'seas.mp4', link:''
+  }
+];
+const SPONSORS = [
+  {name:'Instituto Caldeira', role:'Innovation hub', logo:'caldeira.webp',
+   desc:'Largest innovation hub in Rio Grande do Sul, bringing together over 570 companies and 700+ startups on a campus spanning more than 22,000 m², with an ecosystem that accounts for approximately 15% of the state’s GDP and features partnerships with companies such as Google, AWS, and Dell.'},
+  {name:'ITEC', role:'Technological institute (starting 2027)', logo:'itec.avif',
+   desc:'A philanthropic computer science university, built on a 20-hectare campus with an investment of R$ 400 million ($80 million), whose founders include prominent industry figures such as Edward Wible, co-founder and former CTO of Nubank.'},
+  {name:'Prado Tech', role:'Innovation hub', logo:'pradotech.jpg',
+   desc:'A 30,000-square-meter technology park and innovation hub in Gravataí, with an investment of R$ 200 million ($40 million) led by renowned businessman Carlos Gerdau Johannpeter, designed to house +120 companies and startups and generate approximately 5,000 high-value-added jobs.'},
+  {name:'Unisinos', role:'University', logo:'unisinos.jpg',
+   desc:'A leading university featuring a global technology park with approximately 175 companies that generate +8,000 jobs and an annual revenue exceeding R$ 2.5 billion ($500 million), all situated on a campus spanning +90 hectares in São Leopoldo.'},
+  {name:'SEBRAE/RS', role:'Entrepreneurship support', logo:'sebraers.webp',
+   desc:'The Rio Grande do Sul branch of the Brazilian Micro and Small Business Support Service, mapping +1,300 startups within a state-level ecosystem where micro and small enterprises account for approximately 26% of the GDP and generate the majority of formal jobs'},
+  {name:'Sicredi', role:'Cooperative financial institution', logo:'sicredi.jpg',
+   desc:'Largest cooperative financial institution in Brazil, bringing together +10.5 million members, surpassing the R$ 500 billion ($100 billion) mark in total assets, connecting +595 startups through open innovation programs, and operating +3,100 branches across every state.'}
+];
+
+function renderSponsors() {
+  const box = document.getElementById('inova-sponsors');
+  if (!box) return;
+  box.innerHTML = SPONSORS.map(s => `
+    <article class="sp">
+      <div class="sp-logo"><img src="${s.logo}" alt="${s.name}" onerror="this.outerHTML='<span class=sp-fb>${s.name}</span>'"></div>
+      <div class="sp-body"><span class="sp-role">${s.role}</span><h3>${s.name}</h3><p>${s.desc}</p></div>
+    </article>`).join('');
+}
+
+const FLAGSHIPS = [
+  {kicker:'Winner - The Earth Prize 2026', title:'Best Sustainable Project of Central & South America',
+   text:'At the world’s largest youth environmental competition..', img:''},
+  {kicker:'Honoree - Junior Achievement 18 Under 18', title:'One of the 18 most impactful and promising young people in the state',
+   text:'Named by the world’s largest social organization in entrepreneurial education.', img:''},
+  {kicker:'Awardee - Blue Ocean Entrepreneurship Competition 2025', title:'Top 500 youth businesses out of +23,000',
+   text:'In the world’s largest virtual youth business-pitch competition.', img:''}
+];
+
+const REC_GROUPS = [
+  {name:'Research & Sustainability', items:[
+    {year:'2026', title:'The Earth Prize: Central & South America Winner', issuer:'The Earth Prize', level:'International',
+     desc:'Best Sustainable Project of the Continent, for Hada; 1 of 7 worldwide winners out of +6,000 projects, $12,000 prize.',
+     img:'tep.png', link:'', featured:true},
+    {year:'2025', title:'National Science Olympiad (ONC) Gold Medal', issuer:'ONC', level:'National', desc:'One of the largest and most prestigious scientific competitions in Brazil, covering Astronomy, Physics, Chemistry, Biology, and the History of Science; 0.2% of 5.2 million.', img:'onc.png', cut:true, link:'https://certificados.onciencias.org/item/UD0AHPNQ', linkLabel:'Verify the official certificate'},
+  ]},
+  {name:'Technology & Entrepreneurship', items:[
+    {year:'2025', title:'NFTE World Series of Innovation - Climate Action', issuer:'NFTE', level:'International', desc:'Top 10 among +4,000 projects in global competition that engages young people from +90 countries each year to create business solutions aligned with the UN SDGs.', img:'wsitop10.png', link:'nfte.pdf', cut:true, linkLabel:'Read the full evaluation', featured:true},
+    {year:'2025', title:'Most Promising Young Startup', issuer:'Instituto Caldeira', level:'State',
+ desc:'Awarded to team Atrián after a 56-hour business immersion among 40 young founders with 4 Instituto Caldeira unicorns, Orkut Büyükkökten (Founder of Orkut), and Professor Noslen (Brazil’s most influential linguistics professor with +7.8 million followers across all social networks).',
+ img:'premiocaldeira.png', cut:true, ratio: '4/5'},
+    {year:'2025', title:'NASA Space Apps Challenge: Honorable Mention', issuer:'NASA', level: 'International',desc:'Addressing NASA’s sustainability requirements for Martian expeditions, we have prototyped the first circular industrial system beyond Earth, designed to convert inorganic waste into raw materials. We, team Atrián, named it A.R.E.S. (Advanced Recycling and Electrothermal System).', img:'nasa.png'},
+    {year:'2025', title:'Maratona Tech: Honorable Mention', issuer:'IBM, Google Cloud, Federal Government of Brazil...', level:'National', desc:'The largest student technology olympiad and competition in all of Brazil; Honorable Mention - top 1% of 289,000 participants.', img:'maratonatech.png', cert:true},
+    {year:'2025', title:'Blue Ocean Entrepreneurship Competition 2026', issuer:'Blue Ocean Strategy', level:'International', desc:'World’s largest virtual global business pitch competition for young people; Top 500 globally among +23,000. participants', img:'blueocean.png', cert:true},
+    {year:'2025', title:'National Financial Mathematics Olympiad (OBMF) Gold Medal', issuer:'Seleta Educação', level:'National', desc:'One of the premier national olympiads focused on market analysis and economic management; Gold Medalist among +23,000 participants.', img:'obmf.png', cert:true},
+    {year:'2026', title:'National Geopolitics Olympiad (OBGP) Gold Medal', issuer:'Seleta Educação', level:'National', desc:'One of the premier national olympiads focused on diplomatic realignment and the geopolitical analysis of historical trends; Gold Medalist among +41,000 participants.', img:'obgp.png', cert:true},
+    {year:'2026', title:'National Entrepreneurship Olympiad (OBNE) Gold Medal', issuer:'Seleta Educação', level:'National', desc:'One of the premier national competitions focused on investigating performance metrics and analyzing the growth and sustainability of startups; awarded a Gold Medal among +43,000 participants.', img:'obne.png', cert:true}
+  ]},
+  {name:'Youth Leadership & Civic', items:[
+    {year:'2026', title:'18 Under 18', issuer:'Junior Achievement', level:'State/International',
+     desc:'Named one of the 18 most impactful and promising young people in the entire state of Rio Grande do Sul by the internationally renowned organization Junior Achievement, with a focus on the field of Research, Science, and Innovation.',
+     img:'18under18.jpeg', link:'', featured:true},
+    {year:'2026', title:'Honor from CODES', issuer:'Socio-Economic Development Council',level: 'Municipal',
+     desc:'I received an Honor of Public Recognition for Impact from the Socioeconomic Development Council of Gravataí, in the presence of all municipal secretaries and public servants; I also had the opportunity to give a talk on youth impact and investment in applied scientific research.', img:'codes.png', cut:true, featured:true},
+    {year:'2026', title:'Motion of Public Recognition', issuer:'Gravataí City Council', level:'Municipal',
+     desc:'Public recognition from the entire City Council for putting Gravataí on the international map of sustainable innovation and for the ongoing local civic impact fostered by Hada, GSSA, Interact, Atrián, and others.',
+     img:'council.png', cut:true, link:'MOÇÃO 57 2026.pdf', linkLabel:'Read the motion', featured:true}
+  ]}
+];
+
+const recPhoto = (r, extra = '') => r.img
+  ? `<figure class="rc-photo${r.cut ? ' cut' : ''}${r.cert ? ' cert' : ''} ${extra}" style="${r.ratio ? `aspect-ratio:${r.ratio}` : ''}" tabindex="0" data-caption="${r.title}" data-meta="${r.issuer || ''}"><img src="${r.img}" alt="${r.title}" loading="lazy" onerror="this.closest('figure').remove()"></figure>`
+  : '';
+
+function renderRecognition() {
+  const fl = document.getElementById('rec-flagships');
+  if (fl) fl.innerHTML = FLAGSHIPS.map((f, i) => `
+    <article class="ft">
+      ${recPhoto(f)}
+      <span class="ft-num">0${i + 1}</span>
+      <span class="ft-kicker">${f.kicker}</span>
+      <h3 class="ft-title">${f.title}</h3>
+      <p>${f.text}</p>
+    </article>`).join('');
+
+  const gr = document.getElementById('rec-groups');
+  if (gr) gr.innerHTML = REC_GROUPS.map((g, i) => `
+    <div class="rc-group">
+      <div class="rc-head"><span class="rc-gnum">0${i + 1}</span><h3>${g.name}</h3><span class="rc-count">${g.items.length} ${g.items.length === 1 ? 'entry' : 'entries'}</span></div>
+      <div class="rc-list">
+        ${g.items.map(r => `
+        <article class="rc${r.featured ? ' feat' : ''}">
+          <div class="rc-year">${r.year}</div>
+          <div class="rc-body">
+            ${r.featured ? '<span class="rc-flag">✦ Featured</span>' : ''}
+            <h4 class="rc-title">${r.title}</h4>
+            <p class="rc-issuer">${r.issuer}${r.level ? `<span class="rc-lvl">${r.level}</span>` : ''}</p>
+            ${r.desc ? `<p class="rc-desc">${r.desc}</p>` : ''}
+            ${r.link ? `<a class="rc-link" href="${r.link}" target="_blank" rel="noopener">${r.linkLabel || 'Verify'} ↗</a>` : ''}
+          </div>
+          ${recPhoto(r)}
+        </article>`).join('')}
+      </div>
+    </div>`).join('');
+
+  const c = document.getElementById('rec-count');
+  if (c) c.textContent = REC_GROUPS.reduce((n, g) => n + g.items.length, 0);
+}
+function renderCases() {
+  const box = document.getElementById('atrian-cases');
+  if (!box) return;
+
+  box.innerHTML = CASES.map(c => `
+    <article class="case">
+      <div class="case-media">
+        <span class="case-num">${c.n}</span>
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">${c.tag} · live demo</span></div>
+          <div class="browser-screen" data-file="${c.video}">
+            <video muted loop playsinline preload="metadata" aria-label="${c.org} demo">
+              <source src="${c.video}" type="video/mp4"
+                onerror="this.closest('.browser-screen').classList.add('empty')">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="case-body">
+        <p class="eyebrow">${c.tag}</p>
+        <h3>${c.org}</h3>
+        <p class="case-sub">${c.sub}</p>
+        <div class="ba">
+          <div class="ba-before"><span class="tag">Before</span><p>${c.before}</p></div>
+          <div class="ba-after"><span class="tag">After ✦</span><p>${c.after}</p></div>
+        </div>
+        <ul class="chips">${c.chips.map(x => `<li>${x}</li>`).join('')}</ul>
+        ${c.link ? `<a class="btn" href="${c.link}" target="_blank" rel="noopener">OPEN PROJECT ↗</a>` : ''}
+      </div>
+    </article>`).join('');
+
+  box.querySelectorAll('video').forEach(v => {
+    v.setAttribute('muted', '');
+    videoObserver.observe(v); 
+    v.addEventListener('click', () => v.paused ? v.play() : v.pause());
+  });
+}
+  
+    renderRecognition();
+    renderSponsors();
+    addGalleryImages();
+renderCases();
+fixStaticImages();
+
+
+
+    document.addEventListener('click', event => {
+
+      const figure = event.target.closest('.cloud figure:not(.is-text):not(.is-video):not(.is-embed), .rc-photo');
+
+      if (figure) {
+        openLightbox(figure);
+      } else if (
+        event.target === lightbox ||
+        event.target.closest('#lightbox button')
+      ) {
+        closeLightbox();
+      }
+
+    });
+
+
+
+    document.addEventListener('keydown', event => {
+
+      if (event.key === 'Escape' && !lightbox.hidden) {
+        closeLightbox();
+      }
+
+      if (
+        event.key === 'Enter' &&
+        document.activeElement.matches('.cloud figure, .rc-photo')
+      ) {
+        openLightbox(document.activeElement);
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
