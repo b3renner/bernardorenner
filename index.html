@@ -1936,6 +1936,66 @@ footer .meta a:focus-visible { color: var(--accent); text-decoration: underline;
   #recognition .rc .rc-photo.cut { width: min(56%, 190px); margin: 16px auto 0; translate: 0 0; }
   #recognition .rc .rc-photo.cut { aspect-ratio: 1 / 1 !important; }
 }
+
+.inv-sponsors { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+.ft-grid      { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+.voices-grid  { grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr)); }
+.inv-chapter > div, .cm-chapter > div { min-width: 0; }
+.rc-head { flex-wrap: wrap; }
+
+@media (min-width: 821px) and (max-width: 1000px) {
+  .press-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 820px) {
+  html { scroll-padding-top: 90px; }
+  header {
+    background: rgba(17,17,16,.92);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    padding-top: calc(12px + env(safe-area-inset-top, 0px));
+    padding-bottom: 10px; row-gap: 6px;
+    border-bottom: 1px solid rgba(243,239,231,.1);
+  }
+  #home, .hero { min-height: 100svh; }  
+
+  .hq, .hq--pill {
+    flex-direction: column; align-items: flex-start; gap: 18px;
+    padding: 54px 22px 26px; border-radius: 30px 56px 56px 30px;
+  }
+  .hq-body { flex: none; width: 100%; }
+  .hq-logo { width: 96px; }
+  #atrian .hq-logo-link { align-self: flex-start; }
+  #atrian .hq-logo-link .hq-logo { width: 90px; }
+  .vp-icon { height: 110px; top: -44px; right: -6px; }
+
+  .case, .case:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
+  .case > * { min-width: 0; }
+  .case-media { margin-top: 34px; }
+  .case-num { top: -52px; }
+  .case-sub { overflow-wrap: anywhere; }
+  .browser-url { max-width: none; min-width: 0; font-size: 10px; }
+
+  .inv-emblem {
+    position: static; display: block; z-index: auto;
+    width: min(44vw, 180px); margin: 14px auto 44px; opacity: 1;
+  }
+
+  .cm-duo { grid-template-columns: minmax(0, 1fr); }
+  .aw-tile { padding: 18px 16px; }
+  .aw-tile b { font-size: clamp(26px, 8vw, 36px); }
+  .aw-tile.t-gold b { font-size: clamp(20px, 5.6vw, 28px); }
+  .aw-tile span { font-size: 10px; letter-spacing: .08em; }
+}
+
+@media (max-width: 680px) {
+  .rc-head { row-gap: 6px; }
+  .rc-count { margin-left: 0; width: 100%; }
+}
+
+@media (max-width: 560px) {
+  .press-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .news--feat .news-img { min-height: 0; }
+}
   </style>
 </head>
 
@@ -2488,7 +2548,7 @@ footer .meta a:focus-visible { color: var(--accent); text-decoration: underline;
 
   {file:'hadaprofs.jpg',x:1,y:24,cols:5,rows:5,mobileRows:6,caption:'With our faculty advisors',className:'shape-bl'},
   {file:'hadamultifeira.png',x:6,y:24,cols:4,rows:5,mobileRows:6,caption:'One of our science-fair participations'},
-  {file:'hadacodes.png',x:10,y:24,cols:3,rows:3,mobileRows:5,caption:'Lecture at the Socio-Economic Development Council (CODES)'},
+  {file:'hadacodes.png',x:10,y:24,cols:3,rows:3,mobileRows:6,className:'m-wide',caption:'Lecture at the Socio-Economic Development Council (CODES)'},
   {type:'text',variant:'ink',big:'Earth Prize 2026',small:'Central & South America',className:'t-sm m-wide',x:10,y:27,cols:3,rows:2,mobileRows:4},
  
 ],
